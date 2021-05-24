@@ -61,14 +61,14 @@ public class FrontController {
         @GetMapping("/project_creation_succes")
         public String project_creation_succes(Model model)
     {
-        model.addAttribute("project_list",projectArrayList.get(projectArrayList.size()-1));
+        model.addAttribute("project_details",projectArrayList.get(projectArrayList.size()-1));
         return "project_creation_succes";
     }
         // Project details skal indeholde alle fakta om aktuelt project man arbejder med.
         @GetMapping("/project_details")
         public String project_details(Model model)
         {
-            model.addAttribute("projects",projectArrayList);
+            model.addAttribute("detailposts",projectArrayList);
             return "project_details";
         }
 

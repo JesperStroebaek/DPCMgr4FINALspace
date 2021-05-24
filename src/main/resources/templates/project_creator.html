@@ -30,20 +30,29 @@
                     <!-- Consultant Name -->
                         <li><label for="consultant_name">ConsultantName</label></li>
                         <input type="text" name="consultant_name" id="consultant_name">
-                    <!--  Project Name -->
-                        <li><label for="project_name">ProjectName</label></li>
+                    <!-- pro.name -->
+                        <li><label for="project_name">Project Name</label></li>
                         <input type="text" name="project_name" id="project_name">
-                        <li><label for="dead_line">EndDate(Deadline)</label></li>
+                        <!-- startDate -->
+                        <li><label for="start_date">Starting Date</label></li>
+                        <input type="date" id="start_date" name="start_date">
+                        <!-- deadline -->
+                        <li><label for="dead_line">Ending Date (Deadline)</label></li>
                         <input type="date" id="dead_line" name="dead_line">
-                        <li><label for="project_description">Description</label></li>
-                        <textarea name="project_description" id="project_description" cols="40" rows="5">Description:</textarea>
-                        <li><label for="number_of_task">NumberOfTasks</label></li>
-                        <input type="number" name="number_of_task" id="number_of_task">
-                        <li><label for="project_id">Project ID</label></li>
-                        <input type="number" name="project_id" id="project_id">
-                        <li><label for="total_project_time">Estimated Total Project Time (Hours.Minutes)</label></li>
-                        <input type="number" name="total_project_time" id="total_project_time">
-                        <button type="submit" value="Add to project">Add to project</button>
+                    <!-- pro.descr -->
+                        <li><label for="project_description">Description of total Project (clientname, requirements, etc):</label></li>
+                        <textarea name="project_description" id="project_description" cols="40" rows="5"></textarea>
+                    <!-- subtask.name -->
+                        <li><label for="subtask_name">Initial subtask:</label></li>
+                        <input type="text" name="subtask_name" id="subtask_name">
+                    <!-- subtask.desc -->
+                        <li><label for="subtask_description">Description of initial subtask:</label></li>
+                        <textarea name="subtask_description" id="subtask_description" cols="40" rows="5"></textarea>
+                    <!-- subtasktime -->
+                        <li><label for="subtask_time">Estimated subtask time:</label></li>
+                        <input type="number" name="subtask_time" id="subtask_time">
+                    <!-- submitTask button -->
+                        <button type="submit" value="Add to project">Create project</button>
 
                         </ul>
                 </form>

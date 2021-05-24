@@ -15,7 +15,7 @@ import java.util.Date;
 public class FrontController {
 
     ArrayList<Project> projectArrayList = new ArrayList<>();
-
+    ArrayList<String> activeProjectsArray = new ArrayList<>();
     // @GetMapping tager imod en getrequest fra browseren.
     @GetMapping("/index")
     public String index()
@@ -43,10 +43,11 @@ public class FrontController {
     {
         return "project_creator";
     }
-    @GetMapping("/project_list")
-    public String project_list()
+    @GetMapping("/project_update")
+    public String project_update()
     {
-        return "project_list";
+
+        return "project_update";
     }
     // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
@@ -71,6 +72,13 @@ public class FrontController {
             model.addAttribute("detailposts",projectArrayList);
             return "project_details";
         }
+    @GetMapping("/project_list")
+        public String project_list(@RequestParam("project_name")String ProjectName)
+    {
+
+        activeProjectsArray.add(project_list(ProjectName));
+        return "project_list";
+    }
 
 }
 

@@ -28,10 +28,10 @@
         </div>
             <div th:each="Project_details : ${detailposts}">
                 <p th:text="${project_details.getProjectName()}"></p>
-                <p th:text="${project_details.getDeadLine()}"></p>
+                <p th:date="${project_details.getDeadLine()}"></p>
                 <p th:text="${project_details.getProjectDescription()}"></p>
-                <p th:text="${project_details.getProjectId()}"></p>
-                <p th:text="${project_details.getNumberOfTask()}"></p>  -->
+                <p th:number="${project_details.getProjectId()}"></p>
+                <p th:number="${project_details.getNumberOfTask()}"></p>
             </div>
 
 

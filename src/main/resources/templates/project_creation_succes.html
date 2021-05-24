@@ -28,11 +28,11 @@
 
           <section id="project_creation_form_succes">
               <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
-              <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
+              <p th:date="${'DeadLine: ' + project_details.getDeadLine()}"></p>
               <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
-              <p th:text="${'ProjectId: ' + project_details.getProjectId()}"></p>
-              <p th:text="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
-              <p th:text="${'NumberOfTasks: ' + project_details.getNumberOfTask()}"></p>
+              <p th:number="${'ProjectId: ' + project_details.getProjectId()}"></p>
+              <p th:number="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
+              <p th:number="${'NumberOfTask: ' + project_details.getNumberOfTask()}"></p>
 
           </section>
 

@@ -50,9 +50,9 @@ public class FrontController {
     }
     // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
-    public String submit_project_form(@RequestParam("projectName")String projectName
-            , @RequestParam("dead_line") Date deadLine, @RequestParam("project_description")String projectDescription
-            , @RequestParam("project_id")int projectId, @RequestParam("total_project_time")double totalProjectTime,@RequestParam("number_of_task")int numberOfTask)
+    public String submit_project_form(@RequestParam("project_name")String projectName
+            , @RequestParam("dead_line") String deadLine, @RequestParam("project_description")String projectDescription
+            , @RequestParam("project_id")String projectId, @RequestParam("total_project_time")String totalProjectTime,@RequestParam("number_of_task")String numberOfTask)
     {
         Project project = new Project(projectName,deadLine,projectDescription,projectId,totalProjectTime,numberOfTask);
         projectArrayList.add(project);

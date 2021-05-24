@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head class="head">
+    <meta name="viewport" content="width=device=width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+    <meta charset="UTF-8">
+    <title>project_creator</title>
+</head>
+<body>
+<header class="header">
+            <h1>
+                - D P C M -
+            </h1>
+            <p>Data Project Concept Management</p>
+            <hr>
+            <nav id="header_nav">
+                <a href="project_list">ProjectList</a>
+                <a href="index">Home</a>
+                <a href="project_creator">ProjectCreator</a>
+            </nav>
+            <hr>
+        </header>
+         <h1>
+                Project-creator. in templates folder
+        </h1>
+
+                <form action="/submit_project_form" method="post">
+                    <ul>
+                    <!-- Consultant Name -->
+                        <li><label for="consultant_name">ConsultantName</label></li>
+                        <input type="text" name="consultant_name" id="consultant_name">
+                    <!--  Project Name -->
+                        <li><label for="project_name">ProjectName</label></li>
+                        <input type="text" name="project_name" id="project_name">
+                        <li><label for="dead_line">EndDate(Deadline)</label></li>
+                        <input type="date" id="dead_line" name="dead_line">
+                        <li><label for="project_description">Description</label></li>
+                        <textarea name="project_description" id="project_description" cols="40" rows="5">Description:</textarea>
+                        <li><label for="number_of_task">NumberOfSubTasks</label></li>
+                        <input type="number" name="number_of_task" id="number_of_task"> -->
+                        <li><label for="project_id">TaskName</label></li>
+                        <input type="number" name="project_id" id="project_id">
+                        <li><label for="total_project_time">Estimated Total Project Time (Hours.Minutes)</label></li>
+                        <input type="number" name="total_project_time" id="total_project_time">    -->
+                        <button type="submit" value="Add to project">Add to project</button>
+
+                        </ul>
+                </form>
+
+        <footer class="footer">
+            <hr>
+            <nav id="footer_nav">
+                <a href="project_list">ProjectList</a>
+                <a href="index">Home</a>
+                <a href="project_creator">ProjectCreator</a>
+            </nav>
+            <hr>
+            <div id="footer-text">
+                <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
+            </div>
+        </footer>
+
+</body>
+</html>
+

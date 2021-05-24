@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head class="head">
+    <meta name="viewport" content="width=device=width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+        <header class="header">
+            <h1>
+                - D P C M -
+            </h1>
+            <p>Data Project Concept Management</p>
+            <hr>
+            <nav id="header_nav">
+                <a href="index">Home</a>
+            </nav>
+            <hr>
+        </header>
+        <div class="login_form">
+            <h1>
+                LOGIN-siden.. templ folder
+            </h1>
+            <div class="login_form">
+                <form action="/submit_login" method="post">
+                    <li><label for="consultant_name">ConsultantName</label></li>
+                    <input type="text" name="consultant_name" id="consultant_name">
+                    <li><label for="password">Password</label></li>
+                    <input type="password" name="password" id="password">
+                    <!-- Button -->
+                    <input type="submit" value="login" name="submit_login" id="submit_login">
+                </form>
+            </div>
+        </div>
+        <footer class="footer">
+            <hr>
+            <nav id="footer_nav">
+                <a href="index">Home</a>
+            </nav>
+            <hr>
+            <div id="footer-text">
+                <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
+            </div>
+        </footer>
+</body>
+</html>

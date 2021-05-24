@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head class="head">
+    <meta name="viewport" content="width=device=width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+    <meta charset="UTF-8">
+    <title>projectcreationsucces</title>
+</head>
+    <body>
+          <header class="header">
+              <h1>
+                  - D P C M -
+              </h1>
+              <p>Data Project Concept Management</p>
+              <hr>
+              <nav id="header_nav">
+                  <a href="project_list">ProjectList</a>
+                  <a href="index">Home</a>
+                  <a href="project_creator">ProjectCreator</a>
+              </nav>
+              <hr>
+          </header>
+            <h2>
+              Project is created..
+            </h2>
+          <a href="/project_creator">Add more tasks to Project</a>
+
+
+          <section id="project_creation_form_succes">
+              <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
+              <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
+              <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
+              <p th:text="${'ProjectId: ' + project_details.getProjectId()}"></p>
+              <p th:text="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
+              <p th:text="${'NumberOfTasks: ' + project_details.getNumberOfTask()}"></p>
+
+          </section>
+
+
+            <p>Result can be altered and viewed in the Project List</p>
+          <footer class="footer">
+              <hr>
+              <nav id="footer_nav">
+
+                  <a href="project_list">ProjectList</a>
+                  <a href="index">Home</a>
+                  <a href="project_creator">ProjectCreator</a>
+              </nav>
+              <hr>
+
+              <div id="footer-text">
+                  <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
+              </div>
+          </footer>
+    </body>
+</html>

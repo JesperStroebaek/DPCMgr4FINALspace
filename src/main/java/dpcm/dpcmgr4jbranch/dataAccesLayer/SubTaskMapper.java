@@ -1,4 +1,4 @@
-package com.example.dpcmgr4v1.dataAccesLayer;
+package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
 public class SubTaskMapper {
 }

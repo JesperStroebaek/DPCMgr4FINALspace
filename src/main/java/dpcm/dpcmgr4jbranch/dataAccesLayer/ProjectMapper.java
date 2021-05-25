@@ -1,13 +1,15 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
+
 import dpcm.dpcmgr4jbranch.dataAccesLayer.DBManager;
+import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 
 import java.sql.*;
 
 
 public class ProjectMapper
 {
-    public static String readFromProject() throws com.example.dpcmgr4v1.model.direction.SQLexceptionHandler {
+    public static String readFromProject() throws SQLexceptionHandler {
         String ename = null;
         try {
             Connection con = DBManager.getConnection();
@@ -27,7 +29,7 @@ public class ProjectMapper
             }
             System.out.println(rs);
         } catch (SQLException ex) {
-           throw new com.example.dpcmgr4v1.model.direction.SQLexceptionHandler(ex.getMessage());
+           throw new SQLexceptionHandler(ex.getMessage());
         }
             return "It works!";
 

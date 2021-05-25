@@ -1,4 +1,4 @@
-package com.example.dpcmgr4v1.model.classes;
+package dpcm.dpcmgr4jbranch.model.classes;
 
 import org.thymeleaf.standard.processor.StandardUnlessTagProcessor;
 

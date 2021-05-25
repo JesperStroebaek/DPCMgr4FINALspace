@@ -1,7 +1,9 @@
-package com.example.dpcmgr4v1.dataAccesLayer;
+package dpcm.dpcmgr4jbranch.dataAccesLayer;
+
+import dpcm.dpcmgr4jbranch.model.classes.Consultant;
 
 public class ConsultantMapper {
-    public com.example.dpcmgr4v1.model.classes.Consultant login(int id, String consulentName, String password) {
+    public Consultant login(int id, String consulentName, String password) {
 
         return null;
     }

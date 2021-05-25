@@ -1,4 +1,4 @@
-package com.example.dpcmgr4v1.model.direction;
+package dpcm.dpcmgr4jbranch.model.direction;
 
 
 

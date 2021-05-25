@@ -43,19 +43,27 @@ public class FrontController {
     {
         return "project_creator";
     }
+     @GetMapping("/project_list")
+    public String project_list(Model model)
+    {
+        model.addAttribute("projects",projectArrayList);
 
+        return "project_list";
+    }
 
     // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
-    public String submit_project_form(@RequestParam("project_name")String projectName
-            , @RequestParam("dead_line") String deadLine, @RequestParam("project_description")String projectDescription
-            , @RequestParam("project_id")String projectId, @RequestParam("total_project_time")String totalProjectTime,@RequestParam("number_of_task")String numberOfTask)
+    public String submit_project_form(@RequestParam("consultant_name")String consultantName, @RequestParam("project_name")String projectName
+        , @RequestParam("start_date")String startDate, @RequestParam("dead_line") String deadLine
+        , @RequestParam("project_description")String projectDescription
+        , @RequestParam("sub_task_name")String subTaskName,@RequestParam("sub_task_description") String subTaskDescription
+        , @RequestParam("sub_task_name")String subTaskTime)
     {
-        Project project = new Project(projectName,deadLine,projectDescription,projectId,totalProjectTime,numberOfTask);
+        Project project = new Project(consultantName,projectName,startDate,deadLine,projectDescription,subTaskName,subTaskDescription,subTaskTime);
         projectArrayList.add(project);
         return "redirect:/project_creation_succes";
     }
-        @GetMapping("/project_creation_succes")
+       @GetMapping("/project_creation_succes")
         public String project_creation_succes(Model model)
     {
         model.addAttribute("project_details",projectArrayList.get(projectArrayList.size()-1));
@@ -68,13 +76,7 @@ public class FrontController {
             model.addAttribute("detailposts",projectArrayList);
             return "project_details";
         }
-    @GetMapping("/project_list")
-        public String project_list(@RequestParam("project_name")String ProjectName)
-    {
 
-        activeProjectsArray.add(project_list(ProjectName));
-        return "project_list";
-    }
     @GetMapping("/project_update")
     public String project_update(Model model)
     {
@@ -82,4 +84,9 @@ public class FrontController {
         return "project_update";
     }
 }
+
+
+
+
+
 

@@ -23,21 +23,23 @@
             <h2>
               Project is created..
             </h2>
-          <a href="/project_creator">Add more tasks to Project</a>
 
 
           <section id="project_creation_form_succes">
+              <p th:text="${'ConsultantName: ' + project_details.getConsultantName()}"></p>
               <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
               <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
+              <p th:text="${'StartDate: ' + project_details.getStartDate()}"></p>
               <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
-              <p th:text="${'ProjectId: ' + project_details.getProjectId()}"></p>
-              <p th:text="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
-              <p th:text="${'NumberOfTask: ' + project_details.getNumberOfTask()}"></p>
+              <p th:text="${'SubTaskName: ' + project_details.getSubTaskName()}"></p>
+              <p th:text="${'SubTaskDescription: ' + project_details.getSubTaskDescription()}"></p>
+              <p th:text="${'SubTaskTime: ' + project_details.getSubTaskTime()}"></p>
 
           </section>
+          <hr>
+          <a href="/project_creator">Add more tasks to Project</a>
 
 
-            <p>Result can be altered and viewed on the Project Details Page</p>
           <footer class="footer">
               <hr>
               <nav id="footer_nav">

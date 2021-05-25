@@ -43,12 +43,8 @@ public class FrontController {
     {
         return "project_creator";
     }
-    @GetMapping("/project_update")
-    public String project_update()
-    {
 
-        return "project_update";
-    }
+
     // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
     public String submit_project_form(@RequestParam("project_name")String projectName
@@ -79,6 +75,11 @@ public class FrontController {
         activeProjectsArray.add(project_list(ProjectName));
         return "project_list";
     }
-
+    @GetMapping("/project_update")
+    public String project_update(Model model)
+    {
+        model.addAttribute("new_subtask",activeProjectsArray.get(activeProjectsArray.size()-1));
+        return "project_update";
+    }
 }
 

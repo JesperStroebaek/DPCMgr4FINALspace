@@ -1,58 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head class="head">
-    <meta name="viewport" content="width=device=width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
-    <meta charset="UTF-8">
-    <title>projectcreationsucces</title>
-</head>
+<head th:replace="fragments/head"> Deafalt Head </head>
+
     <body>
-          <header class="header">
-              <h1>
-                  - D P C M -
-              </h1>
-              <p>Data Project Concept Management</p>
-              <hr>
-              <nav id="header_nav">
-                  <a href="project_list">ProjectList</a>
-                  <a href="index">Home</a>
-                  <a href="project_creator">ProjectCreator</a>
-              </nav>
-              <hr>
-          </header>
+
+         <header th:replace="fragments/header">Default Header</header>
             <h2>
               Project is created..
             </h2>
-
-
-          <section id="project_creation_form_succes">
-              <p th:text="${'ConsultantName: ' + project_details.getConsultantName()}"></p>
-              <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
-              <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
-              <p th:text="${'StartDate: ' + project_details.getStartDate()}"></p>
-              <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
-              <p th:text="${'SubTaskName: ' + project_details.getSubTaskName()}"></p>
-              <p th:text="${'SubTaskDescription: ' + project_details.getSubTaskDescription()}"></p>
-              <p th:text="${'SubTaskTime: ' + project_details.getSubTaskTime()}"></p>
-
-          </section>
-          <hr>
           <a href="/project_creator">Add more tasks to Project</a>
 
 
-          <footer class="footer">
-              <hr>
-              <nav id="footer_nav">
+          <section id="project_creation_form_succes">
+              <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
+              <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
+              <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
+              <p th:text="${'ProjectId: ' + project_details.getProjectId()}"></p>
+              <p th:text="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
+              <p th:text="${'NumberOfTask: ' + project_details.getNumberOfTask()}"></p>
 
-                  <a href="project_list">ProjectList</a>
-                  <a href="index">Home</a>
-                  <a href="project_creator">ProjectCreator</a>
-              </nav>
-              <hr>
+          </section>
 
-              <div id="footer-text">
-                  <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
-              </div>
-          </footer>
+
+            <p>Result can be altered and viewed on the Project Details Page</p>
+
     </body>
+<footer th:replace="fragments/footer">Default</footer>
 </html>

@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
-<head class="head">
-  <meta name="viewport" content="width=device=width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
-  <meta charset="UTF-8">
-  <title>projectUpdate</title>
-</head>
+<head th:replace="fragments/head"> Deafalt Head </head>
 
-<body>
-<!-- thymeleaf header.temp -->
-<h1>
-  Project Update.
-</h1>
-<p>add additional tasks to your project:</p>
+  <body>
+    <header th:replace="fragments/header">Default Header</header>
 
-<form action="/add_subtask_form" method="post">
-  <ul>
-    <!-- subtask.name -->
-    <li><label for="subtask_name">New subtask:</label></li>
-    <input type="text" name="subtask_name" id="subtask_name">
-    <!-- subtask.desc -->
-    <li><label for="subtask_description">Description of new subtask:</label></li>
-    <textarea name="subtask_description" id="subtask_description" cols="40" rows="5"></textarea>
-    <!-- subtasktime -->
-    <li><label for="subtask_time">Estimated subtask time:</label></li>
-    <input type="number" name="subtask_time" id="subtask_time">
-    <!-- submitTask button -->
-    <button type="submit" value="Add to project">Add subtask to project</button>
+    <h1>
+        Project Update.
+      </h1>
+    <p>add additional tasks to your project:</p>
 
-  </ul>
+    <form action="/add_subtask_form" method="post">
+      <ul>
+        <!-- subtask.name -->
+        <li><label for="subtask_name">New subtask:</label></li>
+        <input type="text" name="subtask_name" id="subtask_name">
+        <!-- subtask.desc -->
+        <li><label for="subtask_description">Description of new subtask:</label></li>
+        <textarea name="subtask_description" id="subtask_description" cols="40" rows="5"></textarea>
+        <!-- subtasktime -->
+        <li><label for="subtask_time">Estimated subtask time:</label></li>
+        <input type="number" name="subtask_time" id="subtask_time">
+        <!-- submitTask button -->
+        <button type="submit" value="Add to project">Add subtask to project</button>
+      </ul>
 
-</form>
-<!-- thymeleaf footer -->
-</body>
+    </form>
+  <!-- thymeleaf footer -->
+  </body>
+  <footer th:replace="fragments/footer">Default</footer>
 </html>

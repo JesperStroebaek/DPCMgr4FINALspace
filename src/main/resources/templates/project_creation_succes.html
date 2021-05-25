@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head class="head">
-    <meta name="viewport" content="width=device=width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
-    <meta charset="UTF-8">
-    <title>projectcreationsucces</title>
-</head>
+<head th:replace="fragments/head"> Deafalt Head </head>
+
     <body>
-          <header class="header">
-              <h1>
-                  - D P C M -
-              </h1>
-              <p>Data Project Concept Management</p>
-              <hr>
-              <nav id="header_nav">
-                  <a href="project_list">ProjectList</a>
-                  <a href="index">Home</a>
-                  <a href="project_creator">ProjectCreator</a>
-              </nav>
-              <hr>
-          </header>
+
+         <header th:replace="fragments/header">Default Header</header>
             <h2>
               Project is created..
             </h2>
@@ -38,19 +23,7 @@
 
 
             <p>Result can be altered and viewed on the Project Details Page</p>
-          <footer class="footer">
-              <hr>
-              <nav id="footer_nav">
 
-                  <a href="project_list">ProjectList</a>
-                  <a href="index">Home</a>
-                  <a href="project_creator">ProjectCreator</a>
-              </nav>
-              <hr>
-
-              <div id="footer-text">
-                  <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
-              </div>
-          </footer>
     </body>
+<footer th:replace="fragments/footer">Default</footer>
 </html>

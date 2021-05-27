@@ -36,22 +36,27 @@ public class ProjectMapper
 
     }
 
-    public Project insertToProject(String projectName, String projectDescription/*int totalProjectTime*/, String consultantName, String startDate, String deadLine) throws SQLException {
+    public int insertToProject(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) {
         try {
             Connection con = DBManager.getConnection();
-            String SQL = "INSERT INTO project (project_name, project_description,/*total_project_time*/ consultant_name, start_date, dead_line ) VALUES (?,?,?,?,?)";
+            String SQL = "INSERT INTO project (project_name, project_description, consultant_name, start_date, dead_line ) VALUES (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, projectName);
             ps.setString(2, projectDescription);
-            //ps.setInt(3, totalProjectTime);
             ps.setString(3, consultantName);
             ps.setString(4, startDate);
             ps.setString(5, deadLine);
             ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            int projectId = rs.getInt(1);
+            return projectId;
         } catch (SQLException exception) {
             exception.printStackTrace();
+
         }
-        return project;
+        return -1;
     }
+
 
 }

@@ -22,10 +22,9 @@ public class Project
     // konstrukter (tom).
     public Project() {}
 
-    public project(String projectName, String projectDescription, int totalProjectTime, String consultantName, String startDate, String deadLine) {
+    public Project(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) {
         this.projectName = projectName;
         this.projectDescription = projectDescription;
-        this.totalProjectTime = totalProjectTime;
         this.consultantName = consultantName;
         this.startDate = startDate;
         this.deadLine = deadLine;

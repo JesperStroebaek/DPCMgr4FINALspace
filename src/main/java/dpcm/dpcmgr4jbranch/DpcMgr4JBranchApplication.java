@@ -1,6 +1,5 @@
 package dpcm.dpcmgr4jbranch;
 
-import dpcm.dpcmgr4jbranch.dataAccesLayer.SQLinsert;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +11,7 @@ public class DpcMgr4JBranchApplication {
 
     public static void main(String[] args) throws SQLException, SQLexceptionHandler {
         SpringApplication.run(DpcMgr4JBranchApplication.class, args);
-        SQLinsert sql = new SQLinsert();
+
         //sql.insert();
     }
 

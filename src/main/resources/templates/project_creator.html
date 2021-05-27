@@ -16,11 +16,19 @@
                 <form action="/submit_project_form" method="post">
                     <ul>
                     <!-- Consultant Name -->
+                        <li><label for="project_name">Project Name</label></li>
+                        <input type="text" name="project_name" id="project_name">
+
+                        <li><label for="project_description">Description of total Project (clientname, requirements, etc):</label></li>
+                        <textarea name="project_description" id="project_description" cols="40" rows="5"></textarea>
+
+                        <li><label for="total_project_time">Estimated project time</label>
+                        <input type="number" name="total_project_time" id="total_project_time"></li>
+
                         <li><label for="consultant_name">ConsultantName</label></li>
                         <input type="text" name="consultant_name" id="consultant_name">
                     <!-- pro.name -->
-                        <li><label for="project_name">Project Name</label></li>
-                        <input type="text" name="project_name" id="project_name">
+
                         <!-- startDate -->
                         <li><label for="start_date">Starting Date</label></li>
                         <input type="date" id="start_date" name="start_date">
@@ -28,8 +36,7 @@
                         <li><label for="dead_line">Ending Date (Deadline)</label></li>
                         <input type="date" id="dead_line" name="dead_line">
                     <!-- pro.descr -->
-                        <li><label for="project_description">Description of total Project (clientname, requirements, etc):</label></li>
-                        <textarea name="project_description" id="project_description" cols="40" rows="5"></textarea>
+
                     <!-- subtask.name -->
                         <li><label for="sub_task_name">Initial subtask:</label></li>
                         <input type="text" name="sub_task_name" id="sub_task_name">

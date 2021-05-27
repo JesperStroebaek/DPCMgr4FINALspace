@@ -12,9 +12,8 @@ public class DataFacade {
     private ConsultantMapper consultantMapper = new ConsultantMapper();
 
 
-    public int insertToProject(String projectName, String projectDescription, int totalProjectTime, String consultantName, String startDate, String deadLine) throws SQLException {
+    public void insertToProject(String projectName, String projectDescription/* int totalProjectTime*/, String consultantName, String startDate, String deadLine) throws SQLException {
 
-        return projectMapper.insertToProject(projectName,projectDescription,totalProjectTime,consultantName,startDate,deadLine);
     }
 
 

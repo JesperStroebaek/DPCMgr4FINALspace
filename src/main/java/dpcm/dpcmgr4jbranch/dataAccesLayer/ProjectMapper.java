@@ -1,6 +1,7 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
 
+import dpcm.dpcmgr4jbranch.model.classes.Project;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 
 import java.sql.*;
@@ -8,7 +9,7 @@ import java.sql.*;
 
 public class ProjectMapper
 {
-
+    Project project = new Project();
 
     public static String readFromProject() throws SQLexceptionHandler {
         try {
@@ -35,22 +36,22 @@ public class ProjectMapper
 
     }
 
-    public static int insertToProject(String projectName, String projectDescription, int totalProjectTime, String consultantName, String startDate, String deadLine) throws SQLException {
+    public Project insertToProject(String projectName, String projectDescription/*int totalProjectTime*/, String consultantName, String startDate, String deadLine) throws SQLException {
         try {
             Connection con = DBManager.getConnection();
-            String SQL = "INSERT INTO project (project_name, project_description,total_project_time, consultant_name, start_date, dead_line ) VALUES (?,?,?,?,?,?)";
+            String SQL = "INSERT INTO project (project_name, project_description,/*total_project_time*/ consultant_name, start_date, dead_line ) VALUES (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, projectName);
             ps.setString(2, projectDescription);
-            ps.setInt(3, totalProjectTime);
-            ps.setString(4, consultantName);
-            ps.setString(5, startDate);
-            ps.setString(6, deadLine);
+            //ps.setInt(3, totalProjectTime);
+            ps.setString(3, consultantName);
+            ps.setString(4, startDate);
+            ps.setString(5, deadLine);
             ps.executeUpdate();
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        return totalProjectTime;
+        return project;
     }
 
 }

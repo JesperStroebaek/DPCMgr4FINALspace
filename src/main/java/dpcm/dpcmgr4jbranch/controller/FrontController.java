@@ -1,12 +1,17 @@
 package dpcm.dpcmgr4jbranch.controller;
 
+import dpcm.dpcmgr4jbranch.dataAccesLayer.SQLinsert;
 import dpcm.dpcmgr4jbranch.model.classes.Project;
+import dpcm.dpcmgr4jbranch.model.direction.LoginHandler;
+import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,6 +21,9 @@ public class FrontController {
 
     ArrayList<Project> projectArrayList = new ArrayList<>();
     ArrayList<String> activeProjectsArray = new ArrayList<>();
+    Project project = new Project();
+
+
     // @GetMapping tager imod en getrequest fra browseren.
     @GetMapping("/index")
     public String index()
@@ -39,8 +47,20 @@ public class FrontController {
 
     // Skal indeholde en samlet liste over alle de projekter der er blevet arbejdet, og ikke er slettet fra DB. 'overblik'
     @GetMapping("/project_creator")
-    public String project_creator()
+    public String project_creator(WebRequest request, Model model)throws Exception
     {
+        String consultantName = request.getParameter("consultant_name");
+        String projectName = request.getParameter("project_name");
+        String startDate = request.getParameter("start_date");
+        String deadLine = request.getParameter("dead_line");
+        String projectDescription = request.getParameter("project_description");
+        String subTaskName = request.getParameter("sub_task_name");
+        String subTaskDescription= request.getParameter("sub_task_description");
+        String subTaskTime = request.getParameter("sub_task_time");
+
+       //project.Pr
+
+
         return "project_creator";
     }
      @GetMapping("/project_list")
@@ -86,6 +106,13 @@ public class FrontController {
     {
         model.addAttribute("new_subtask",activeProjectsArray.get(activeProjectsArray.size()-1));
         return "project_update";
+    }
+
+    SQLinsert sqLinsert = new SQLinsert();
+    @PostMapping("/insertSQL")
+    public String insertSQL() throws SQLexceptionHandler {
+        sqLinsert.readSQL();
+        return "redirect:/template1";
     }
 }
 

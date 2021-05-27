@@ -7,27 +7,35 @@ public class Project
 {
     //Atributter (encapsulation, dataType, variable). og en arraylist.
 
-    private String consultantName;
-
     private String projectName;
+    private String projectDescription;
+    private int totalProjectTime;
+    private String consultantName;
     private String startDate;
     private String deadLine;
-    private String projectDescription;
+
     private String subTaskName;
     private String subTaskDescription;
     private String subTaskTime;
-
-   // private ArrayList<Project> projectArrayList;
+    //private ArrayList<Project> projectArrayList;
 
     // konstrukter (tom).
     public Project() {}
+
+    public Project(String projectName, String projectDescription, int totalProjectTime, String consultantName, String startDate, String deadLine) {
+        this.projectName = projectName;
+        this.projectDescription = projectDescription;
+        this.totalProjectTime = totalProjectTime;
+        this.consultantName = consultantName;
+        this.startDate = startDate;
+        this.deadLine = deadLine;
+    }
 
     // Konstrukter med parameter. finder det project vi skal have fat i.
     public Project (String consultantName,String projectName,String startDate, String deadLine, String projectDescription, String subTaskName,
                     String subTaskDescription, String subTaskTime)
     {
         this.consultantName = consultantName;
-
         this.projectName = projectName;
         this.deadLine = deadLine;
         this.startDate = startDate;
@@ -36,6 +44,7 @@ public class Project
         this.subTaskDescription = subTaskDescription;
         this.subTaskTime = subTaskTime;
     }
+
 
 
     // Konstrukter med parameter. og en arrayList.
@@ -55,6 +64,14 @@ public class Project
 
     // Metoder Getter og Setter.
 
+
+    public int getTotalProjectTime() {
+        return totalProjectTime;
+    }
+
+    public void setTotalProjectTime(int totalProjectTime) {
+        this.totalProjectTime = totalProjectTime;
+    }
 
     public String getConsultantName() {
         return consultantName;

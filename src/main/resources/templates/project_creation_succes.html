@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/head"> Deafalt Head </head>
 
@@ -8,16 +8,15 @@
             <h2>
               Project is created..
             </h2>
-          <a href="/project_creator">Add more tasks to Project</a>
+          <a href="/project_update">Add more tasks to Project</a>
 
 
           <section id="project_creation_form_succes">
               <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
               <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
               <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
-              <p th:text="${'ProjectId: ' + project_details.getProjectId()}"></p>
-              <p th:text="${'TotalProjectTime: ' + project_details.getTotalProjectTime()}"></p>
-              <p th:text="${'NumberOfTask: ' + project_details.getNumberOfTask()}"></p>
+              <p th:text="${'StartDate: ' + project_details.getStartDate()}"></p>
+              <p th:text="${'ConsultantName: ' + project_details.getConsultantName()}"></p>
 
           </section>
 

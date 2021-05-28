@@ -6,12 +6,9 @@ import java.sql.*;
 
 
 
-            'Tpt'
- INT 'total project time' = sum('subtask time' where 'pro id' = 'prject id' agtigt)
-
-
 
 
 public class ListMapper {
+
 
 }

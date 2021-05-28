@@ -13,13 +13,9 @@ public class DpcMgr4JBranchApplication {
 
     public static void main(String[] args) throws SQLexceptionHandler {
         SpringApplication.run(DpcMgr4JBranchApplication.class, args);
-       /* ListMapper listMapper = new ListMapper();
-        listMapper.getList();
-        //sql.insert();
-
-        */
         ProjectMapper projectMapper = new ProjectMapper();
         projectMapper.getProject();
+
 
     }
 

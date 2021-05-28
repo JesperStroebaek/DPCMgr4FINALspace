@@ -76,15 +76,7 @@ public class FrontController {
         String projectDescription = request.getParameter("project_description");
         String startDate = request.getParameter("start_date");
         String deadLine = request.getParameter("dead_line");
-        dataFacade.createProject(projectName, projectDescription, consultantName, startDate, deadLine);
-        /*@RequestParam("consultant_name")String consultantName
-        , @RequestParam("project_name")String projectName
-        , @RequestParam("start_date")String startDate
-        , @RequestParam("dead_line") String deadLine
-        , @RequestParam("project_description")String projectDescription
-        , @RequestParam("sub_task_name")String subTaskName
-        , @RequestParam("sub_task_description") String subTaskDescription
-        , @RequestParam("sub_task_time")String subTaskTime)*/
+        int id = dataFacade.createProject(projectName, projectDescription, consultantName, startDate, deadLine);
 
         Project project = new Project(projectName, consultantName, projectDescription, startDate, deadLine);
         projectArrayList.add(project);

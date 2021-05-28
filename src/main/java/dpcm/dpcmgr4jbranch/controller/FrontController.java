@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 
 
@@ -98,15 +97,17 @@ public class FrontController {
         return "project_details";
     }
 
-    @GetMapping("/project_update")
-    public String project_update() {
-        return "project_update";
+    @GetMapping("/subtask_creator")
+    public String subtask_creator(Model model) {
+
+        return "subtask_creator";
     }
 
-    @PostMapping("/add_subtask_form")
+    @PostMapping("/submit_subtask_form")
     public String add_subtask_form(Model model) {
         model.addAttribute("subtaskpost", subTaskArrayList);
-        return "redirect:/add_subtask_succes";
+
+        return "redirect:/subtask_creation_succes";
     }
 
 

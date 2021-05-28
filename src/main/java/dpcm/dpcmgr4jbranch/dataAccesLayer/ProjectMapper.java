@@ -9,15 +9,15 @@ import java.sql.*;
 
 public class ProjectMapper
 {
-    Project project = new Project();
 
-    public static String readFromProject() throws SQLexceptionHandler {
+    public int getProject() throws SQLexceptionHandler {
         try {
             Connection con = DBManager.getConnection();
             Statement statement = con.createStatement();
-            String sql = "SELECT * from project";
-            ResultSet rs = statement.executeQuery(sql);
-                while (rs.next())
+            String SQL = "SELECT * from project";
+            PreparedStatement pr = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = pr.executeQuery();
+
             {
                 String p_nameCol1 = rs.getString(1);
                 int p_idCol2 = rs.getInt(2);
@@ -32,7 +32,7 @@ public class ProjectMapper
         } catch (SQLException ex) {
            throw new SQLexceptionHandler(ex.getMessage());
         }
-            return "It works!";
+            return -1;
 
     }
 

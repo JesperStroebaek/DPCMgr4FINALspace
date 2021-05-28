@@ -61,6 +61,13 @@ public class FrontController {
         return "project_list";
     }
 
+    @PostMapping("/get_project_list")
+    public String getProjectList(){
+
+
+        return "redirect:project_list";
+    }
+
     // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
     public String submit_project_form(WebRequest request) throws Exception {
@@ -81,7 +88,7 @@ public class FrontController {
 
         Project project = new Project(projectName, consultantName, projectDescription, startDate, deadLine);
         projectArrayList.add(project);
-        return "redirect:/project_creation_succes";
+        return "redirect:project_creation_succes";
     }
 
     @GetMapping("/project_creation_succes")
@@ -103,11 +110,12 @@ public class FrontController {
         return "subtask_creator";
     }
 
+
     @PostMapping("/submit_subtask_form")
     public String add_subtask_form(Model model) {
         model.addAttribute("subtaskpost", subTaskArrayList);
 
-        return "redirect:/subtask_creation_succes";
+        return "redirect:subtask_creation_succes";
     }
 
 

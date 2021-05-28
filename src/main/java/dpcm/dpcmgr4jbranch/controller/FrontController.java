@@ -112,10 +112,24 @@ public class FrontController {
 
 
     @PostMapping("/submit_subtask_form")
-    public String add_subtask_form(Model model) {
+    public String add_subtask_form(WebRequest webRequest, Model model) {
+        String suptaskName = webRequest.getParameter("sub_task_name");
+        String suptaskDesripion = webRequest.getParameter("sub_task_description");
+        String suptaskTime = webRequest.getParameter("sub_task_time");
+        String subtaskPrice = webRequest.getParameter("sub_task_price");
+        String subtaskConsultantnName = webRequest.getParameter("sub_task_consultant_name");
+        String subtaskDeadLine = webRequest.getParameter("sub_task_dead_line");
+
+
+        dataFacade.createSubTask(suptaskName, suptaskDesripion, suptaskTime, subtaskPrice, subtaskConsultantnName, subtaskDeadLine);
         model.addAttribute("subtaskpost", subTaskArrayList);
 
         return "redirect:subtask_creation_succes";
+    }
+    @GetMapping("/subtask_creation_succes")
+    public String subtask_creation_succes(){
+
+        return "subtask_creation_succes";
     }
 
 

@@ -12,6 +12,7 @@ public class DataFacade {
 
 
     ProjectMapper projectMapper = new ProjectMapper();
+    SubTaskMapper subTaskMapper = new SubTaskMapper();
     private ConsultantMapper consultantMapper = new ConsultantMapper();
 
 
@@ -21,6 +22,13 @@ public class DataFacade {
 
     }
 
+    public int createSubTask(String suptaskName, String subtaskDesripion, String subtaskTime, String subtaskPrice, String subtaskConsultantnName, String subtaskDeadLine ){
+        // Her laver vi string om til int og double
+        int intsubtaskTime = Integer.parseInt(subtaskTime);
+        double doublesubtaskPrice = Double.parseDouble(subtaskPrice);
+
+        return subTaskMapper.insertToSubTask( suptaskName,  subtaskDesripion,  intsubtaskTime, doublesubtaskPrice, subtaskConsultantnName, subtaskDeadLine );
+    }
 
     public Project getProjectFromId(int projectId) {
     return null;

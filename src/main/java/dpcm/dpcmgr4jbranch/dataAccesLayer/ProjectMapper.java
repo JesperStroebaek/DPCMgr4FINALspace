@@ -10,7 +10,7 @@ import java.sql.*;
 public class ProjectMapper
 {
 
-    public int getProject() throws SQLexceptionHandler {
+    public String getProject() throws SQLexceptionHandler {
         try {
             Connection con = DBManager.getConnection();
             Statement statement = con.createStatement();
@@ -32,7 +32,7 @@ public class ProjectMapper
         } catch (SQLException ex) {
            throw new SQLexceptionHandler(ex.getMessage());
         }
-            return -1;
+            return "";
 
     }
 

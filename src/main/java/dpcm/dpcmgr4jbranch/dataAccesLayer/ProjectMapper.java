@@ -32,31 +32,7 @@ public class ProjectMapper
         }
     }
 
-    public String getProject() throws SQLexceptionHandler {
-        try {
-            Connection con = DBManager.getConnection();
-            Statement statement = con.createStatement();
-            String SQL = "SELECT * from project";
-            PreparedStatement pr = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = pr.executeQuery();
 
-            {
-                String p_nameCol1 = rs.getString(1);
-                int p_idCol2 = rs.getInt(2);
-                String p_descriptionCol3 = rs.getString(3);
-                int p_totalTimeCol4 = rs.getInt(4);
-                int p_nrOfTasksCol5 = rs.getInt(5);
-                String myQ = p_nameCol1+p_idCol2+p_descriptionCol3+p_totalTimeCol4+p_nrOfTasksCol5;
-                System.out.print(p_nameCol1+p_idCol2+p_descriptionCol3+p_totalTimeCol4+p_nrOfTasksCol5);
-                System.out.println(myQ);
-            }
-            System.out.println(rs);
-        } catch (SQLException ex) {
-            throw new SQLexceptionHandler(ex.getMessage());
-        }
-        return "";
-
-    }
 
 
 

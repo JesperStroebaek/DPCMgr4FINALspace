@@ -1,8 +1,10 @@
 package dpcm.dpcmgr4jbranch.controller;
 
 import dpcm.dpcmgr4jbranch.dataAccesLayer.DataFacade;
+import dpcm.dpcmgr4jbranch.dataAccesLayer.ListMapper;
 import dpcm.dpcmgr4jbranch.model.classes.Project;
 import dpcm.dpcmgr4jbranch.model.classes.SubTask;
+import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,7 @@ public class FrontController {
     DataFacade dataFacade;
     ArrayList<Project> projectArrayList = new ArrayList<>();
     ArrayList<SubTask> subTaskArrayList = new ArrayList<>();
+    ArrayList<ListMapper> projectListArrayList = new ArrayList<>();
     //DataFacade dataFacade = new DataFacade();
 
 
@@ -55,8 +58,10 @@ public class FrontController {
     }
 
     @GetMapping("/project_list")
-    public String project_list(Model model) {
-        model.addAttribute("projects", projectArrayList);
+    public String project_list(Model model) throws SQLexceptionHandler {
+
+        dataFacade.projectList();
+        model.addAttribute("projectlist",dataFacade.projectList().size()-1);
 
         return "project_list";
     }

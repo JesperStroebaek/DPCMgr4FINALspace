@@ -12,12 +12,9 @@
             <p>Currently active projects:</p>
     </div>
     <div>
-        <div th:each="project_details : ${subtaskposts}">
-            <p th:text="${project_details.getProjectName()}"></p>
-            <p th:date="${project_details.getDeadLine()}"></p>
-            <p th:text="${project_details.getProjectDescription()}"></p>
-            <p th:number="${project_details.getProjectId()}"></p>
-            <p th:number="${project_details.getNumberOfTask()}"></p>
+        <div th:each="Project : ${projects}">
+            <p th:text="${projects.getProjectName}"></p>
+            <p th:date="${projects.getDeadLine()}"></p>
 
             <ul>
             <li></li>

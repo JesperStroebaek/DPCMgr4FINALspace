@@ -4,7 +4,9 @@ import java.sql.*;
 
 public class SubTaskMapper {
 
-    public int insertToSubTask(String suptaskName,  String subtaskDesripion, int intsubtaskTime, double doublesubtaskPrice, String subtaskConsultantnName, String subtaskDeadLine ) {
+    public int insertToSubTask(String suptaskName,  String subtaskDesripion,
+                               int intsubtaskTime, double doublesubtaskPrice,
+                               String subtaskConsultantnName, String subtaskDeadLine ) {
         try {
             Connection con = DBManager.getConnection();
             String SQL = "INSERT INTO sub_task (sub_task_name, sub_task_description, sub_task_time, sub_task_price, sub_task_consultant_name, sub_task_dead_line) VALUES (?,?,?,?,?,?,?);";

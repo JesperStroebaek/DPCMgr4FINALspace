@@ -7,6 +7,7 @@ public class Project
 {
     //Atributter (encapsulation, dataType, variable). og en arraylist.
 
+    private int projectId;
     private String projectName;
     private String projectDescription;
     private int totalProjectTime;
@@ -14,13 +15,12 @@ public class Project
     private String startDate;
     private String deadLine;
 
-    private String subTaskName;
-    private String subTaskDescription;
-    private String subTaskTime;
-    //private ArrayList<Project> projectArrayList;
+
 
     // konstrukter (tom).
     public Project() {}
+
+
 
     public Project(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) {
         this.projectName = projectName;
@@ -30,39 +30,14 @@ public class Project
         this.deadLine = deadLine;
     }
 
-    // Konstrukter med parameter. finder det project vi skal have fat i.
-    public Project (String consultantName,String projectName,String startDate, String deadLine, String projectDescription, String subTaskName,
-                    String subTaskDescription, String subTaskTime)
-    {
-        this.consultantName = consultantName;
-        this.projectName = projectName;
-        this.deadLine = deadLine;
-        this.startDate = startDate;
-        this.projectDescription = projectDescription;
-        this.subTaskName = subTaskName;
-        this.subTaskDescription = subTaskDescription;
-        this.subTaskTime = subTaskTime;
+
+    public int getProjectId() {
+        return projectId;
     }
 
-
-
-    // Konstrukter med parameter. og en arrayList.
-  /*  public Project(String projectName, int projectId, String projectDescription, double totalProjectTime, int numberOfTask) {
-    {
-        this.projectName = projectName;
+    public void setProjectId(int projectId) {
         this.projectId = projectId;
-        this.projectDescription = projectDescription;
-        this.totalProjectTime = totalProjectTime;
-        this.numberOfTask = numberOfTask;
-
     }
-
-
-   */
-
-
-    // Metoder Getter og Setter.
-
 
     public int getTotalProjectTime() {
         return totalProjectTime;
@@ -112,38 +87,6 @@ public class Project
         this.projectDescription = projectDescription;
     }
 
-    public String getSubTaskName() {
-        return subTaskName;
-    }
-
-    public void setSubTaskName(String subTaskName) {
-        this.subTaskName = subTaskName;
-    }
-
-    public String getSubTaskDescription() {
-        return subTaskDescription;
-    }
-
-    public void setSubTaskDescription(String subTaskDescription) {
-        this.subTaskDescription = subTaskDescription;
-    }
-
-    public String getSubTaskTime() {
-        return subTaskTime;
-    }
-
-    public void setSubTaskTime(String subTaskTime) {
-        this.subTaskTime = subTaskTime;
-    }
-
-    // Metode String toString.
-    @Override
-    public String toString()
-    {
-        return "consultantName: "+consultantName+"ProjectName: " + projectName+"startDate: "+startDate + "deadLine: "
-                + deadLine+"ProjectDescription: " + projectDescription
-                + "subTaskName: "+subTaskName+"subTaskDescription: "+subTaskDescription+"subTaskTime: "+subTaskTime;
-    }
 
 
 }

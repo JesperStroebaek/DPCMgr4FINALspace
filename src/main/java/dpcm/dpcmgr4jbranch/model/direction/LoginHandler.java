@@ -10,18 +10,6 @@ import java.sql.SQLException;
 public class LoginHandler
 {
 
-    public Project project(String consultantName, String projectName, String startDate,
-                           String deadLine, String projectDescription, String subTaskName,
-                           String subTaskDescription, String subTaskTime){
-
-        Project project = new Project(consultantName, projectName,startDate,
-                                        deadLine,projectDescription,subTaskName,
-                subTaskDescription,subTaskTime);
-
-        return project;
-    }
-
-
    /*  private DataFacade facade = new DataFacade();
 
     public LoginHandler(DataFacade facade)

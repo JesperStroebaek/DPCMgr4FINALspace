@@ -1,9 +1,11 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
 import dpcm.dpcmgr4jbranch.model.classes.Project;
+import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /* Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem.
 for at skjule vores backend for udefrakommende */
@@ -13,6 +15,7 @@ public class DataFacade {
 
     ProjectMapper projectMapper = new ProjectMapper();
     SubTaskMapper subTaskMapper = new SubTaskMapper();
+    ListMapper listMapper = new ListMapper();
     private ConsultantMapper consultantMapper = new ConsultantMapper();
 
 
@@ -22,32 +25,22 @@ public class DataFacade {
 
     }
 
-    public int createSubTask(String suptaskName, String subtaskDesripion, String subtaskTime, String subtaskPrice, String subtaskConsultantnName, String subtaskDeadLine ){
+    public int createSubTask(String subtaskName, String subtaskDescription, String subtaskTime, String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine ){
         // Her laver vi string om til int og double
         int intsubtaskTime = Integer.parseInt(subtaskTime);
         double doublesubtaskPrice = Double.parseDouble(subtaskPrice);
 
-        return subTaskMapper.insertToSubTask( suptaskName,  subtaskDesripion,  intsubtaskTime, doublesubtaskPrice, subtaskConsultantnName, subtaskDeadLine );
+        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  intsubtaskTime, doublesubtaskPrice, subtaskConsultantName, subtaskDeadLine );
     }
 
-    public Project getProjectFromId(int projectId) {
-    return null;
+    public ArrayList projectList() throws SQLexceptionHandler {
+
+        return listMapper.projectListArrayList();
     }
+
+
 }
 
-   /* public Consultant login(int id, String consulentName, String password) {
-        return ConsultantMapper.login(id, consulentName, password);
-    }
-
-
-    public Project insertToProject(Project project) throws SQLException {
-        ProjectMapper.insertToProject();
-        return project;
-    }
-
-
-
-    */
 
 
 

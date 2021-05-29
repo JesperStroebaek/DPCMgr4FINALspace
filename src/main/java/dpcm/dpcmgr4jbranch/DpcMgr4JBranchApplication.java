@@ -10,9 +10,11 @@ public class DpcMgr4JBranchApplication {
 
     public static void main(String[] args) throws SQLexceptionHandler {
         SpringApplication.run(DpcMgr4JBranchApplication.class, args);
-        ProjectListMapper projectListMapper = new ProjectListMapper();
-        projectListMapper.detailsrequest();
+       /* ProjectListMapper kald = new ProjectListMapper();
+        kald.projectListArrayList();
 
+
+        */
 
 
 

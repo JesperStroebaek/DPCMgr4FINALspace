@@ -17,13 +17,10 @@
         <th>ProjectName</th>
         <th>ConsNamd</th>
     </tr>
-        skal lave for eche til arraylist
-    <tr th:each="projectList: ${pdetail}"></tr>
+          <tr th:each="detailsArray : ${pDetail}"></tr>
+        <tr th:text="${pDetail}"></tr>
 
-
-    </table>
-
-    <Form action="/send_project_request" method="Get">
+    <Form action="/send_project_request" method="Post">
         <label for="qId">Enter project Id</label>
     <input type="text" name="qId" id="qId">
     <button type="submit">view details for a project</button>

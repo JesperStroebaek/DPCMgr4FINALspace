@@ -13,7 +13,7 @@ public class DataFacade {
 
     ProjectMapper projectMapper = new ProjectMapper();
     SubTaskMapper subTaskMapper = new SubTaskMapper();
-    ProjectListMapper projectListMapper = new ProjectListMapper();
+    ProjectListMapper listMapper = new ProjectListMapper();
     private ConsultantMapper consultantMapper = new ConsultantMapper();
 
 
@@ -31,9 +31,9 @@ public class DataFacade {
         return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  intsubtaskTime, doublesubtaskPrice, subtaskConsultantName, subtaskDeadLine );
     }
 
-    public ArrayList projectList() throws SQLexceptionHandler {
+    public ArrayList listMapMetode () throws SQLexceptionHandler {
 
-        return projectListMapper.projectListArrayList();
+        return listMapper.projectListArrayList();
     }
 
 

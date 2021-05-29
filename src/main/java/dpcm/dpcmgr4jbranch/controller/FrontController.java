@@ -25,6 +25,7 @@ public class FrontController {
     DataFacade dataFacade;
     ArrayList<Project> projectArrayList = new ArrayList<>();
     ArrayList<SubTask> subTaskArrayList = new ArrayList<>();
+    ArrayList<ProjectList> listArrayList = new ArrayList<>();
     //DataFacade dataFacade = new DataFacade();
 
 
@@ -60,8 +61,8 @@ public class FrontController {
     @GetMapping("/project_list")
     public String project_list(Model model) throws SQLexceptionHandler {
 
-        dataFacade.projectList();
-        model.addAttribute("pdetail",dataFacade);
+        dataFacade.listMapMetode();
+        model.addAttribute("pDetail",dataFacade);
 
         return "project_list";
     }
@@ -129,11 +130,11 @@ public class FrontController {
         return "subtask_creation_succes";
     }
 
-    @GetMapping("/send_project_request")
+    @PostMapping("/send_project_request")
     public String send_project_request(WebRequest webRequest) throws SQLexceptionHandler {
         ProjectListMapper pmlRequest = new ProjectListMapper();
         String qId = webRequest.getParameter("qId");
-        pmlRequest.detailsrequest();
+        pmlRequest.projectListArrayList();
 
 
         return "redirect:project_details";

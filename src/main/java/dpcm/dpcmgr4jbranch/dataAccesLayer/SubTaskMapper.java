@@ -9,7 +9,7 @@ public class SubTaskMapper {
                                String subtaskConsultantnName, String subtaskDeadLine ) {
         try {
             Connection con = DBManager.getConnection();
-            String SQL = "INSERT INTO sub_task (sub_task_name, sub_task_description, sub_task_time, sub_task_price, sub_task_consultant_name, sub_task_dead_line) VALUES (?,?,?,?,?,?,?);";
+            String SQL = "INSERT INTO sub_task (sub_task_name, sub_task_description, sub_task_time, sub_task_price, sub_task_consultant_name, sub_task_dead_line) VALUES (?,?,?,?,?,?);";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, suptaskName);
             ps.setString(2, subtaskDesripion);

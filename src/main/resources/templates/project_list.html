@@ -3,31 +3,31 @@
 
 <head th:replace="fragments/head">Default Head</head>
 <body>
-    <header th:replace="fragments/header">Default Header</header>
-    <div>
-        <h1>
-                Project-List.
-        </h1>
-        <p>Currently active projects:</p>
-    </div>
-    <div class="project-list-table">
-        <tr>
-            <th>ID</th>
-            <th>ProjectName</th>
-            <th>ConsNamd</th>
-        </tr>
-        <tr th:each="projects : ${projectlist}"></tr>
-        <tr th:each="projectlist : ${projectlist}"></tr>
+<header th:replace="fragments/header">Default Header</header>
+<div>
+    <h1>
+        Project-List.
+    </h1>
+    <p>Currently active projects:</p>
+</div>
+<div class="project-list-table">
+    <tr>
+        <th>ID</th>
+        <th>ProjectName</th>
+        <th>ConsNamd</th>
+    </tr>
+    <tr th:each="projects : ${projectlist}"></tr>
+    <tr th:each="projectlist : ${projectlist}"></tr>
 
 
-            g'nat
+    g'nat
 
 
-        <input type="text">Som tager et Id på det project man vil se i project_details.html
+    <input type="text">Som tager et Id på det project man vil se i project_details.html
 
-    </div>
+</div>
 
 </body>
-        <footer th:replace="fragments/footer">Default</footer>
+<footer th:replace="fragments/footer">Default</footer>
 
 </html>

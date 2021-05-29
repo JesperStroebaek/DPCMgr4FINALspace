@@ -1,14 +1,12 @@
 package dpcm.dpcmgr4jbranch.model.classes;
 
-import org.thymeleaf.standard.processor.StandardUnlessTagProcessor;
-
 public class SubTask
 {
     //Atributter (encapsulation, dataType, variable).
-    private int suptaskId;
-    private String suptaskName;
-    private String suptaskDesripion;
-    private int suptaskTime;
+    private int subtaskId;
+    private String subtaskName;
+    private String subtaskDesripion;
+    private int subtaskTime;
     private double subtaskPrice;
     private String subtaskConsultantnName;
     private String subtaskDeadLine;
@@ -20,49 +18,49 @@ public class SubTask
 
 
     public SubTask(String suptaskName, String suptaskDesripion, int suptaskTime, double subtaskPrice, String subtaskConsultantnName, String subtaskDeadLine) {
-        this.suptaskName = suptaskName;
-        this.suptaskDesripion = suptaskDesripion;
-        this.suptaskTime = suptaskTime;
+        this.subtaskName = suptaskName;
+        this.subtaskDesripion = suptaskDesripion;
+        this.subtaskTime = suptaskTime;
         this.subtaskPrice = subtaskPrice;
         this.subtaskConsultantnName = subtaskConsultantnName;
         this.subtaskDeadLine = subtaskDeadLine;
     }
 
     // Metoder Getter og Setter.
-    public int getSuptaskId() {
-        return suptaskId;
+    public int getSubtaskId() {
+        return subtaskId;
     }
 
-    public void setSuptaskId(int suptaskId) {
-        this.suptaskId = suptaskId;
+    public void setSubtaskId(int subtaskId) {
+        this.subtaskId = subtaskId;
     }
 
-    public String getSuptaskName() {
-        return suptaskName;
+    public String getSubtaskName() {
+        return subtaskName;
     }
 
     public void setSuptaskname(String suptaskName) {
-        this.suptaskName = suptaskName;
+        this.subtaskName = suptaskName;
     }
 
-    public String getSuptaskDesripion() {
-        return suptaskDesripion;
+    public String getSubtaskDesripion() {
+        return subtaskDesripion;
     }
 
-    public void setSuptaskDesripion(String suptaskDesripion) {
-        this.suptaskDesripion = suptaskDesripion;
+    public void setSubtaskDesripion(String subtaskDesripion) {
+        this.subtaskDesripion = subtaskDesripion;
     }
 
     public int getSuptaskTime() {
-        return suptaskTime;
+        return subtaskTime;
     }
 
     public void setSuptaskTime(int suptaskTime) {
-        this.suptaskTime = suptaskTime;
+        this.subtaskTime = suptaskTime;
     }
 
-    public void setSuptaskName(String suptaskName) {
-        this.suptaskName = suptaskName;
+    public void setSubtaskName(String subtaskName) {
+        this.subtaskName = subtaskName;
     }
 
     public double getSubtaskPrice() {
@@ -93,7 +91,7 @@ public class SubTask
     @Override
     public String toString()
     {
-        return "SuptaskId. " + suptaskId + "Suptaskname: " + suptaskName + "SuptaskDesripion: " + suptaskDesripion + "SuptaskTime" + suptaskTime;
+        return "SuptaskId. " + subtaskId + "Suptaskname: " + subtaskName + "SuptaskDesripion: " + subtaskDesripion + "SuptaskTime" + subtaskTime;
     }
 
 }

@@ -9,6 +9,9 @@ public class ProjectList {
     private String consultantName;
 
     public ProjectList(int projectId, String projectName, String consultantName) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.consultantName = consultantName;
     }
 
     public List<ProjectList> projects()

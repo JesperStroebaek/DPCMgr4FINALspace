@@ -1,7 +1,7 @@
 package dpcm.dpcmgr4jbranch.controller;
 
 import dpcm.dpcmgr4jbranch.dataAccesLayer.DataFacade;
-import dpcm.dpcmgr4jbranch.model.classes.ProjectList;
+
 import dpcm.dpcmgr4jbranch.model.classes.Project;
 import dpcm.dpcmgr4jbranch.model.classes.SubTask;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
@@ -66,9 +66,8 @@ public class FrontController {
     }
 
     @PostMapping("/get_project_list")
-    public String getProjectlist(Model model) throws SQLexceptionHandler {
+    public String getProjectList(){
 
-        model.addAttribute("projectList", dataFacade.projectList());
 
         return "redirect:project_list";
     }

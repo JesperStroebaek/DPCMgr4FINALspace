@@ -1,33 +1,33 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
-import dpcm.dpcmgr4jbranch.model.classes.List;
-import dpcm.dpcmgr4jbranch.model.classes.Project;
+import dpcm.dpcmgr4jbranch.model.classes.ProjectList;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 
-public class ListMapper {
+public class ProjectListMapper {
 
-    public ArrayList<List> projectListArrayList() throws SQLexceptionHandler {
+    public ArrayList<ProjectList> projectListArrayList() throws SQLexceptionHandler {
         try {
             Connection con = DBManager.getConnection();
-            String SQL = "SELECT project_id, project_name FROM project;";
+            String SQL = "SELECT project_id, project_name, consultant_name FROM project;";
             PreparedStatement pr = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = pr.executeQuery();
-            ArrayList<List> projectlist = new ArrayList<>();
+            ArrayList<ProjectList> projectlisten = new ArrayList<>();
             while (rs.next()){
                 int projectId = rs.getInt(1);
                 String projectName = rs.getString(2);
-                List list = new List (projectId, projectName);
-                projectlist.add(list);
+                String consultantName = rs.getString(3);
+                ProjectList projectList = new ProjectList(projectId, projectName, consultantName);
+                projectlisten.add(projectList);
                 //TODO Hej Robert vi sakl have vores projectId + projectName til at stå på vores project_list i vores HTML men vi har prøvet alt
-                System.out.println(list);
+                System.out.println(projectList);
 
 
             }
-            return projectlist;
+            return projectlisten;
         } catch (SQLException ex) {
             throw new SQLexceptionHandler(ex.getMessage());
         }

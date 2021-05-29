@@ -1,18 +1,22 @@
 package dpcm.dpcmgr4jbranch.model.classes;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.List;
 
-public class List {
+public class ProjectList {
+
     private int projectId;
     private String projectName;
-    public ArrayList<Project> projects = new ArrayList<>();
+    private String consultantName;
 
-
-    public List(int projectId, String projectName) {
-        this.projectId = projectId;
-        this.projectName = projectName;
+    public ProjectList(int projectId, String projectName, String consultantName) {
     }
+
+    public List<ProjectList> projects()
+    {
+        return projects();
+
+    }
+
 
     public int getProjectId() {
         return projectId;
@@ -28,6 +32,13 @@ public class List {
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+    public String getConsultantName() {
+        return consultantName;
+    }
+
+    public void setConsultantName(String consultantName) {
+        this.consultantName = consultantName;
     }
 
     @Override

@@ -1,10 +1,8 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
-import dpcm.dpcmgr4jbranch.model.classes.Project;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 /* Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem.
@@ -15,7 +13,7 @@ public class DataFacade {
 
     ProjectMapper projectMapper = new ProjectMapper();
     SubTaskMapper subTaskMapper = new SubTaskMapper();
-    ListMapper listMapper = new ListMapper();
+    ProjectListMapper projectListMapper = new ProjectListMapper();
     private ConsultantMapper consultantMapper = new ConsultantMapper();
 
 
@@ -35,7 +33,7 @@ public class DataFacade {
 
     public ArrayList projectList() throws SQLexceptionHandler {
 
-        return listMapper.projectListArrayList();
+        return projectListMapper.projectListArrayList();
     }
 
 

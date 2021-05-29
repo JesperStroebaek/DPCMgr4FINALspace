@@ -4,24 +4,30 @@
 <head th:replace="fragments/head">Default Head</head>
 <body>
     <header th:replace="fragments/header">Default Header</header>
-
     <div>
-            <h1>
+        <h1>
                 Project-List.
-            </h1>
-            <p>Currently active projects:</p>
+        </h1>
+        <p>Currently active projects:</p>
     </div>
-    <div>
-        <<tr th:each="list:${session.list}">
-            <td th:text="${list.giftName}">Gave</td>
-            <td th:text="${gift.description}">Description</td>
+    <div class="project-list-table">
+        <tr>
+            <th>ID</th>
+            <th>ProjectName</th>
+            <th>ConsNamd</th>
+        </tr>
+        <tr th:each="projects : ${projectlist}"></tr>
+        <tr th:each="projectlist : ${projectlist}"></tr>
 
 
-    </tr>
-            <li></li>
-        </ul>
+            g'nat
+
+
+
+
     </div>
-    </body>
+
+</body>
         <footer th:replace="fragments/footer">Default</footer>
 
 </html>

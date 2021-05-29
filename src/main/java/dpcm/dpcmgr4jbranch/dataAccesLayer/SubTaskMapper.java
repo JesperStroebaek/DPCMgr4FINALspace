@@ -1,5 +1,7 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
+import dpcm.dpcmgr4jbranch.model.classes.SubTask;
+
 import java.sql.*;
 
 public class SubTaskMapper {
@@ -28,4 +30,10 @@ public class SubTaskMapper {
         }
     return -1;
     }
+
+   public SubTask getsubtask(){
+        Connection con = DBManager.getConnection();
+        String =
+   }
+
 }

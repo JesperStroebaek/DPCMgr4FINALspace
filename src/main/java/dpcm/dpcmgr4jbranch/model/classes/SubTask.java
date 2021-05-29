@@ -6,7 +6,7 @@ public class SubTask
     private int subtaskId;
     private String subtaskName;
     private String subtaskDesripion;
-    private int subtaskTime;
+    private int suptaskTime;
     private double subtaskPrice;
     private String subtaskConsultantnName;
     private String subtaskDeadLine;
@@ -20,7 +20,7 @@ public class SubTask
     public SubTask(String suptaskName, String suptaskDesripion, int suptaskTime, double subtaskPrice, String subtaskConsultantnName, String subtaskDeadLine) {
         this.subtaskName = suptaskName;
         this.subtaskDesripion = suptaskDesripion;
-        this.subtaskTime = suptaskTime;
+        this.suptaskTime = suptaskTime;
         this.subtaskPrice = subtaskPrice;
         this.subtaskConsultantnName = subtaskConsultantnName;
         this.subtaskDeadLine = subtaskDeadLine;
@@ -52,11 +52,11 @@ public class SubTask
     }
 
     public int getSuptaskTime() {
-        return subtaskTime;
+        return suptaskTime;
     }
 
     public void setSuptaskTime(int suptaskTime) {
-        this.subtaskTime = suptaskTime;
+        this.suptaskTime = suptaskTime;
     }
 
     public void setSubtaskName(String subtaskName) {
@@ -91,7 +91,7 @@ public class SubTask
     @Override
     public String toString()
     {
-        return "SuptaskId. " + subtaskId + "Suptaskname: " + subtaskName + "SuptaskDesripion: " + subtaskDesripion + "SuptaskTime" + subtaskTime;
+        return "SuptaskId. " + subtaskId + "Suptaskname: " + subtaskName + "SuptaskDesripion: " + subtaskDesripion + "SuptaskTime" + suptaskTime;
     }
 
 }

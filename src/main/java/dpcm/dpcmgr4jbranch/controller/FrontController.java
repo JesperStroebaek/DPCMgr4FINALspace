@@ -1,8 +1,9 @@
 package dpcm.dpcmgr4jbranch.controller;
 
 import dpcm.dpcmgr4jbranch.dataAccesLayer.DataFacade;
-
+import dpcm.dpcmgr4jbranch.dataAccesLayer.ProjectListMapper;
 import dpcm.dpcmgr4jbranch.model.classes.Project;
+import dpcm.dpcmgr4jbranch.model.classes.ProjectList;
 import dpcm.dpcmgr4jbranch.model.classes.SubTask;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,7 @@ public class FrontController {
     public String project_list(Model model) throws SQLexceptionHandler {
 
         dataFacade.projectList();
-        model.addAttribute("projectlist",dataFacade.projectList().size()-1);
+        model.addAttribute("pdetail",dataFacade);
 
         return "project_list";
     }
@@ -126,6 +127,16 @@ public class FrontController {
     public String subtask_creation_succes(){
 
         return "subtask_creation_succes";
+    }
+
+    @GetMapping("/send_project_request")
+    public String send_project_request(WebRequest webRequest) throws SQLexceptionHandler {
+        ProjectListMapper pmlRequest = new ProjectListMapper();
+        String qId = webRequest.getParameter("qId");
+        pmlRequest.detailsrequest();
+
+
+        return "redirect:project_details";
     }
 
 

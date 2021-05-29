@@ -11,20 +11,23 @@
     <p>Currently active projects:</p>
 </div>
 <div class="project-list-table">
-    <tr>
+    <table>
+    <tr class="table-header">
         <th>ID</th>
         <th>ProjectName</th>
         <th>ConsNamd</th>
     </tr>
-    <tr th:each="projects : ${projectlist}"></tr>
-    <tr th:each="projectlist : ${projectlist}"></tr>
+        skal lave for eche til arraylist
+    <tr th:each="projectList: ${pdetail}"></tr>
 
 
-    g'nat
+    </table>
 
-
-    <input type="text">Som tager et Id på det project man vil se i project_details.html
-
+    <Form action="/send_project_request" method="Get">
+        <label for="qId">Enter project Id</label>
+    <input type="text" name="qId" id="qId">
+    <button type="submit">view details for a project</button>
+    </Form>
 </div>
 
 </body>

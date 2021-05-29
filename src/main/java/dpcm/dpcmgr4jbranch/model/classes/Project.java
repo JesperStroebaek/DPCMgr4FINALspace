@@ -14,6 +14,7 @@ public class Project
     private String consultantName;
     private String startDate;
     private String deadLine;
+    private String qId;
 
 
 
@@ -87,6 +88,11 @@ public class Project
         this.projectDescription = projectDescription;
     }
 
+    public String getqId() {
+        return qId;
+    }
 
-
+    public void setqId(String qId) {
+        this.qId = qId;
+    }
 }

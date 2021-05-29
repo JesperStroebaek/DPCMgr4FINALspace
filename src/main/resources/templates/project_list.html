@@ -12,11 +12,12 @@
             <p>Currently active projects:</p>
     </div>
     <div>
-        <div th:each="Project : ${projects}">
-            <p th:text="${projects.getProjectName}"></p>
-            <p th:date="${projects.getDeadLine()}"></p>
+        <<tr th:each="list:${session.list}">
+            <td th:text="${list.giftName}">Gave</td>
+            <td th:text="${gift.description}">Description</td>
 
-            <ul>
+
+    </tr>
             <li></li>
         </ul>
     </div>

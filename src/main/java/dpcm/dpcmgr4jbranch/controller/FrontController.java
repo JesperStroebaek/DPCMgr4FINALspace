@@ -24,7 +24,6 @@ public class FrontController {
     DataFacade dataFacade;
     ArrayList<Project> projectArrayList = new ArrayList<>();
     ArrayList<SubTask> subTaskArrayList = new ArrayList<>();
-    ArrayList<ListMapper> projectListArrayList = new ArrayList<>();
     //DataFacade dataFacade = new DataFacade();
 
 

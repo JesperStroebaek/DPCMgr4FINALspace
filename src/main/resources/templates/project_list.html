@@ -17,17 +17,25 @@
         <th>ProjectName</th>
         <th>ConsNamd</th>
     </tr>
-          <tr th:each="detailsArray : ${pDetail}"></tr>
-        <tr th:text="${pDetail}"></tr>
 
+
+        <td th:each="pDetail : ${pDetail}">
+
+        <td th:text="${pDetail.listMapMetode()}">virk got damn</td>
+         <!--   <tr th:text="${pDetail.listMapMetode()}"></tr>
+            <tr th:text="${pDetail.listMapMetode()}"></tr>
+            <tr th:text="${pDetail.listMapMetode()}"></tr>
+        -->
+        </tr>
+    </table>
     <Form action="/send_project_request" method="Post">
         <label for="qId">Enter project Id</label>
-    <input type="text" name="qId" id="qId">
-    <button type="submit">view details for a project</button>
+    <input type="text" name="qId" id="qId"><button type="submit">view details for a project</button>
     </Form>
+
 </div>
+<footer th:replace="fragments/footer">Default</footer>
 
 </body>
-<footer th:replace="fragments/footer">Default</footer>
 
 </html>

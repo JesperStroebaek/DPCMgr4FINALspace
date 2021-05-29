@@ -139,6 +139,21 @@ public class FrontController {
 
         return "redirect:project_details";
     }
+  //  @GetMapping("/")
+   // public String arrayController(Model model) throws SQLexceptionHandler {
+       // ProjectListMapper Alist = new ProjectListMapper();
+        //String[] ProArray = Alist.projectListArrayList().
+       // return projectArrayList;
+       /* String[] continents = {
+                "Africa", "Antarctica", "Asia", "Australia",
+                "Europe", "North America", "Sourth America"
+        };
+
+        model.addAttribute("continents", continents);
+
+        return "continents";
+
+        */
 
 
 

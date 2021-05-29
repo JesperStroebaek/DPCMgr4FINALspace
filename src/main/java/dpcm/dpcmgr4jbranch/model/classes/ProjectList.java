@@ -46,10 +46,6 @@ public class ProjectList {
 
     @Override
     public String toString() {
-        return "ProjectList{" +
-                "projectId=" + projectId +
-                ", projectName='" + projectName + '\'' +
-                ", consultantName='" + consultantName + '\'' +
-                '}';
+        return projectId + projectName + consultantName;
     }
 }

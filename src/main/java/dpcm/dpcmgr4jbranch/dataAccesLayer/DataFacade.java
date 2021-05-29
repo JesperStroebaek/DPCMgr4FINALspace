@@ -1,5 +1,6 @@
 package dpcm.dpcmgr4jbranch.dataAccesLayer;
 
+import dpcm.dpcmgr4jbranch.model.classes.ProjectList;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.stereotype.Service;
 

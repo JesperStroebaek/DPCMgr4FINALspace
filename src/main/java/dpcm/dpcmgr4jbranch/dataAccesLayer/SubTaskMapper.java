@@ -31,9 +31,11 @@ public class SubTaskMapper {
     return -1;
     }
 
-   public SubTask getsubtask(){
+  /* public SubTask getsubtask(){
         Connection con = DBManager.getConnection();
-        String =
+    return
    }
 
+
+   */
 }

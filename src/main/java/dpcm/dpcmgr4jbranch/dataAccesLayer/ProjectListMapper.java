@@ -26,7 +26,7 @@ public class ProjectListMapper {
                 ProjectList projectlist = new ProjectList(projectId, projectName, consultantName);
                 projectlisten.add(projectlist);
                 //TODO Hej Robert vi sakl have vores projectId + projectName til at stå på vores project_list i vores HTML men vi har prøvet alt
-                //System.out.println(projectlist);
+                System.out.println(projectlist);
 
 
             }
@@ -43,16 +43,16 @@ public class ProjectListMapper {
             String SQLdetail = "SELECT project_id, project_name, consultant_name FROM project where project_id=" + project.getqId() +";";
             PreparedStatement pr = con.prepareStatement(SQLdetail, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = pr.executeQuery();
-            ArrayList<ProjectList> projectlisten = new ArrayList<>();
+            ArrayList<ProjectList> pdetals = new ArrayList<>();
             while (rs.next()){
                 int projectId = rs.getInt(1);
                 String projectName = rs.getString(2);
                 String consultantName = rs.getString(3);
                 ProjectList projectlist = new ProjectList(projectId, projectName, consultantName);
-                projectlisten.add(projectlist);
+                pdetals.add(projectlist);
                 System.out.println(projectlist);
             }
-            return projectlisten;
+            return pdetals;
         } catch (SQLException ex) {
             throw new SQLexceptionHandler(ex.getMessage());
         }

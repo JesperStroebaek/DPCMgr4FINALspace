@@ -28,7 +28,7 @@ public class ProjectListMapper {
                 ProjectList projectlist = new ProjectList(projectId, projectName, consultantName);
                 pListArray.add(projectlist);
                 //TODO Hej Robert vi sakl have vores projectId + projectName til at stå på vores project_list i vores HTML men vi har prøvet alt
-                System.out.println(pListArray);
+                //System.out.println(pListArray);
 
 
             }

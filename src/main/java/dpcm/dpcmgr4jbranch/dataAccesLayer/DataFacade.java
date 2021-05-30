@@ -17,8 +17,10 @@ public class DataFacade {
     ProjectMapper projectMapper = new ProjectMapper();
     SubTaskMapper subTaskMapper = new SubTaskMapper();
     ProjectListMapper listMapper = new ProjectListMapper();
-    private ConsultantMapper consultantMapper = new ConsultantMapper();
-
+    //
+    // ConsultantLogin - Security in general impl.
+    // private ConsultantMapper consultantMapper = new ConsultantMapper();
+    //
 
     public int createProject(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) throws Exception {
 
@@ -26,12 +28,16 @@ public class DataFacade {
 
     }
 
-    public String createSubTask(String subtaskName, String subtaskDescription, String subtaskTime, String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine, String proId ){
+    public String createSubTask(String subtaskName, String subtaskDescription, String subtaskTime
+            , String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine, String proId ){
         // Her laver vi string om til int og double
 
-       // double doublesubtaskPrice = Double.parseDouble(subtaskPrice);
 
-        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId );
+         //int subtaskTime = (Integer.parseInt(subtaskTime));
+
+        int isubtaskTime = 0;
+        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  isubtaskTime, subtaskPrice
+                , subtaskConsultantName, subtaskDeadLine, proId );
     }
 
     public List<ProjectList> listMapMetode () throws SQLexceptionHandler {

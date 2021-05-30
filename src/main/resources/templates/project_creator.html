@@ -10,9 +10,9 @@
     <body>
         <header th:replace="fragments/header">Default Header</header>
             <h1>
-                Project-creator. in templates folder
+                Project Creator.
             </h1>
-
+                <p>Start a new Empty Project:</p>
                 <form action="/submit_project_form" method="post">
                     <ul>
                     <!-- Consultant Name -->
@@ -27,7 +27,7 @@
                     <!-- pro.name -->
 
                         <!-- startDate -->
-                        <li><label for="start_date">Starting Date</label></li>
+                        <li><label  >Starting Date</label></li>
                         <input type="date" id="start_date" name="start_date">
                         <!-- deadline -->
                         <li><label for="dead_line">Ending Date (Deadline)</label></li>

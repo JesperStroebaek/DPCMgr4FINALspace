@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head th:replace="fragments/head">Default Head</head>
 <body>
 <header th:replace="fragments/header">Default Header</header>
@@ -13,22 +12,18 @@
 <div class="project-list-table">
     <table>
     <tr class="table-header">
-        <th>Project ID</th>
-        <th>Project Name</th>
+        <th>ID</th>
+        <th>Name</th>
     </tr>
-   <tr th:each="pDetail : ${pDetail.listMapMetode()}">
-       <td th:text="${pDetail}">
-       <!-- <td th:text="${pDetail.listMapMetode()}">virk got damn</td>-->
-    </td>
-        </table>
+    <tr th:each="pDetail : ${pDetail.listMapMetode()}">
+        <td th:text="${pDetail}">
+        </td>
+    </table>
     <Form action="/send_project_request" method="Post">
         <label for="qId">Enter project Id</label>
     <input type="text" name="qId" id="qId"><button type="submit">view details for a project</button>
     </Form>
-
 </div>
 <footer th:replace="fragments/footer">Default</footer>
-
 </body>
-
 </html>

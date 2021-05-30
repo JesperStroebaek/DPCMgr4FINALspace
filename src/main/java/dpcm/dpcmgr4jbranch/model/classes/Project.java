@@ -10,7 +10,7 @@ public class Project
     private String projectId;
     private String projectName;
     private String projectDescription;
-    private int totalProjectTime;
+    private String totalProjectTime;
     private String consultantName;
     private String startDate;
     private String deadLine;
@@ -41,11 +41,11 @@ public class Project
         this.projectId = projectId;
     }
 
-    public int getTotalProjectTime() {
+    public String getTotalProjectTime() {
         return totalProjectTime;
     }
 
-    public void setTotalProjectTime(int totalProjectTime) {
+    public void setTotalProjectTime(String totalProjectTime) {
         this.totalProjectTime = totalProjectTime;
     }
 

@@ -9,25 +9,45 @@
             <h1>
                 Project-Details for:
             </h1>
+        <table>
         <tr class="table-header">
             <th>Project ID</th>
             <th>Project Name</th>
         </tr>
-        <tr th:each="pDetail : ${pDetail.listMapMetode()}">
-            <td th:text="${pDetail}">
+        <tr th:each="pDetails : ${pDetails.CreateSubtask()}">
+            <tr th:text="${pDetails}">
                 <!-- <td th:text="${pDetail.listMapMetode()}">virk got damn</td>-->
-            </td>
+            </tr>
             </table>
 
     </div>
-            <div th:each="project_details : ${subtaskposts}">
-                <p th:text="${project_details.getProjectName()}"></p>
-                <p th:date="${project_details.getDeadLine()}"></p>
-                <p th:text="${project_details.getProjectDescription()}"></p>
-                <p th:number="${project_details.getProjectId()}"></p>
-                <p th:number="${project_details.getNumberOfTask()}"></p>
-            </div>
-    </body>
 
-    <footer th:replace="fragments/footer">Default</footer>
+
+<table>
+    <tr class="table-header">
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="pDetail : ${pDetail.listMapMetode()}">
+    <td th:text="${pDetail}">testTEXT</td>
+</table>
+
+            <footer th:replace="fragments/footer">Default</footer>
+    </body>
 </html>
+
+<!--
+                 <div th:each="pDetails : ${subtaskposts}">
+    <td th:text=" ${project.getProjectName()}">
+    <td th:text= "${pDetails.getNumberOfTask()}">
+    <td th:text=" ${pDetails.getSubtaskDescription()}">
+    <td th:text=" ${pDetails.getSubtaskTime()}">
+    <td th:text=" ${pDetails.getSubtaskPrice}">
+    <td th:text=" ${pDetails.getSubtaskConsultantName}">
+    <td th:text=" ${pDetails.getSubtaskDeadLine} ">
+    <td th:text=" ${project.getProjectId()}">
+     <p th:text=" ${project_details.getDeadLine()}"></td>
+     <p th:text="  ${project_details.getProjectDescription()}"></p>
+     <p th:number="${project_details.getProjectId()}"></p>
+</div>
+-->

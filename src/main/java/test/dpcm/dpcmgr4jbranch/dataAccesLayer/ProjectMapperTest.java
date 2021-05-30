@@ -27,9 +27,54 @@ public void after() throws Exception {
 * 
 */ 
 @Test
-public void testInsertToProject() throws Exception { 
-//TODO: Test goes here... 
-} 
+public void testInsertToProject() throws Exception {
+    Exception exception = new Exception();
+    System.out.println(exception.getLocalizedMessage());
+}
 
 
-} 
+    @Test
+    public void setTotalProjectTime() {
+    getConsultantName();
+    }
+
+    @Test
+    public void getConsultantName() {
+    }
+
+    @Test
+    public void setConsultantName() {
+    }
+
+    @Test
+    public void getProjectName() {
+    }
+
+    @Test
+    public void setProjectName() {
+    }
+
+    @Test
+    public void setStartDate() {
+    }
+
+    @Test
+    public void getDeadLine() {
+    }
+
+    @Test
+    public void setDeadLine() {
+    }
+
+    @Test
+    public void setProjectDescription() {
+    }
+
+    @Test
+    public void getqId() {
+    }
+
+    @Test
+    public void setqId() {
+    }
+}

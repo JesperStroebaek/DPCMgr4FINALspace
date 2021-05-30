@@ -117,7 +117,7 @@ public class FrontController {
         String subtaskPrice = webRequest.getParameter("sub_task_price");
         String subtaskConsultantName = webRequest.getParameter("sub_task_consultant_name");
         String subtaskDeadLine = webRequest.getParameter("sub_task_dead_line");
-        String proId = webRequest.getParameter("");
+        String proId = webRequest.getParameter("pro_id");
 
         dataFacade.createSubTask(subtaskName, subtaskDescription, subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId);
         model.addAttribute("subtaskpost", subTaskArrayList);

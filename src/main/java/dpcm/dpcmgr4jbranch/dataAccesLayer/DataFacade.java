@@ -4,7 +4,9 @@ import dpcm.dpcmgr4jbranch.model.classes.ProjectList;
 import dpcm.dpcmgr4jbranch.model.direction.SQLexceptionHandler;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 
 /* Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem.
 for at skjule vores backend for udefrakommende */
@@ -24,17 +26,18 @@ public class DataFacade {
 
     }
 
-    public int createSubTask(String subtaskName, String subtaskDescription, String subtaskTime, String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine ){
+    public String createSubTask(String subtaskName, String subtaskDescription, String subtaskTime, String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine, String proId ){
         // Her laver vi string om til int og double
-        int intsubtaskTime = Integer.parseInt(subtaskTime);
-        double doublesubtaskPrice = Double.parseDouble(subtaskPrice);
 
-        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  intsubtaskTime, doublesubtaskPrice, subtaskConsultantName, subtaskDeadLine );
+       // double doublesubtaskPrice = Double.parseDouble(subtaskPrice);
+
+        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId );
     }
 
-    public ArrayList listMapMetode () throws SQLexceptionHandler {
+    public List<ProjectList> listMapMetode () throws SQLexceptionHandler {
 
-        return listMapper.projectListArrayList();
+        return listMapper.pListArrayList();
+
     }
 
 

@@ -13,21 +13,14 @@
 <div class="project-list-table">
     <table>
     <tr class="table-header">
-        <th>ID</th>
-        <th>ProjectName</th>
-        <th>ConsNamd</th>
+        <th>Project ID</th>
+        <th>Project Name</th>
     </tr>
-
-
-        <td th:each="pDetail : ${pDetail}">
-
-        <td th:text="${pDetail.listMapMetode()}">virk got damn</td>
-         <!--   <tr th:text="${pDetail.listMapMetode()}"></tr>
-            <tr th:text="${pDetail.listMapMetode()}"></tr>
-            <tr th:text="${pDetail.listMapMetode()}"></tr>
-        -->
-        </tr>
-    </table>
+   <tr th:each="pDetail : ${pDetail.listMapMetode()}">
+       <td th:text="${pDetail}">
+       <!-- <td th:text="${pDetail.listMapMetode()}">virk got damn</td>-->
+    </td>
+        </table>
     <Form action="/send_project_request" method="Post">
         <label for="qId">Enter project Id</label>
     <input type="text" name="qId" id="qId"><button type="submit">view details for a project</button>

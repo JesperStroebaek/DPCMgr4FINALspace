@@ -1,37 +1,38 @@
 package dpcm.dpcmgr4jbranch.model.classes;
 
-public class SubTask
-{
+public class SubTask {
     //Atributter (encapsulation, dataType, variable).
-    private int subtaskId;
+    private String subtaskId;
     private String subtaskName;
-    private String subtaskDesripion;
-    private int suptaskTime;
-    private double subtaskPrice;
-    private String subtaskConsultantnName;
+    private String subtaskDescription;
+    private String subtaskTime;
+    private String subtaskPrice;
+    private String subtaskConsultantName;
     private String subtaskDeadLine;
 
     // konstrukter (tom).
-    public SubTask(){}
+    public SubTask() {
+    }
 
     // Konstrukter med parameter.
 
 
-    public SubTask(String suptaskName, String suptaskDesripion, int suptaskTime, double subtaskPrice, String subtaskConsultantnName, String subtaskDeadLine) {
+    public SubTask(String suptaskName, String subtaskDescription, String subtaskTime
+            , String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine) {
         this.subtaskName = suptaskName;
-        this.subtaskDesripion = suptaskDesripion;
-        this.suptaskTime = suptaskTime;
+        this.subtaskDescription = subtaskDescription;
+        this.subtaskTime = subtaskTime;
         this.subtaskPrice = subtaskPrice;
-        this.subtaskConsultantnName = subtaskConsultantnName;
+        this.subtaskConsultantName = subtaskConsultantName;
         this.subtaskDeadLine = subtaskDeadLine;
     }
 
     // Metoder Getter og Setter.
-    public int getSubtaskId() {
+    public String getSubtaskId() {
         return subtaskId;
     }
 
-    public void setSubtaskId(int subtaskId) {
+    public void setSubtaskId(String subtaskId) {
         this.subtaskId = subtaskId;
     }
 
@@ -43,40 +44,38 @@ public class SubTask
         this.subtaskName = suptaskName;
     }
 
-    public String getSubtaskDesripion() {
-        return subtaskDesripion;
+    public String getSubtaskDescription() {
+        return subtaskDescription;
     }
 
-    public void setSubtaskDesripion(String subtaskDesripion) {
-        this.subtaskDesripion = subtaskDesripion;
+    public void setSubtaskDescription(String subtaskDescription) {
+        this.subtaskDescription = subtaskDescription;
     }
 
-    public int getSuptaskTime() {
-        return suptaskTime;
+    public String getSubtaskTime() {
+        return subtaskTime;
     }
 
-    public void setSuptaskTime(int suptaskTime) {
-        this.suptaskTime = suptaskTime;
+    public void setSubtaskTime(String subtaskTime) {
+        this.subtaskTime = subtaskTime;
     }
 
     public void setSubtaskName(String subtaskName) {
         this.subtaskName = subtaskName;
     }
 
-    public double getSubtaskPrice() {
+    public String getSubtaskPrice() {
         return subtaskPrice;
     }
 
-    public void setSubtaskPrice(double subtaskPrice) {
-        this.subtaskPrice = subtaskPrice;
+    public void setSubtaskPrice(String subtaskPrice) { this.subtaskPrice = subtaskPrice; }
+
+    public String getSubtaskConsultantName() {
+        return subtaskConsultantName;
     }
 
-    public String getSubtaskConsultantnName() {
-        return subtaskConsultantnName;
-    }
-
-    public void setSubtaskConsultantnName(String subtaskConsultantnName) {
-        this.subtaskConsultantnName = subtaskConsultantnName;
+    public void setSubtaskConsultantName(String subtaskConsultantName) {
+        this.subtaskConsultantName = subtaskConsultantName;
     }
 
     public String getSubtaskDeadLine() {
@@ -86,12 +85,6 @@ public class SubTask
     public void setSubtaskDeadLine(String subtaskDeadLine) {
         this.subtaskDeadLine = subtaskDeadLine;
     }
-
-    // Metode String toString.
-    @Override
-    public String toString()
-    {
-        return "SuptaskId. " + subtaskId + "Suptaskname: " + subtaskName + "SuptaskDesripion: " + subtaskDesripion + "SuptaskTime" + suptaskTime;
-    }
-
 }
+
+

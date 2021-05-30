@@ -9,7 +9,17 @@
             <h1>
                 Project-Details for:
             </h1>
-        </div>
+        <tr class="table-header">
+            <th>Project ID</th>
+            <th>Project Name</th>
+        </tr>
+        <tr th:each="pDetail : ${pDetail.listMapMetode()}">
+            <td th:text="${pDetail}">
+                <!-- <td th:text="${pDetail.listMapMetode()}">virk got damn</td>-->
+            </td>
+            </table>
+
+    </div>
             <div th:each="project_details : ${subtaskposts}">
                 <p th:text="${project_details.getProjectName()}"></p>
                 <p th:date="${project_details.getDeadLine()}"></p>

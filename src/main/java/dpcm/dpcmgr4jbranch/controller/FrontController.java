@@ -111,15 +111,15 @@ public class FrontController {
 
     @PostMapping("/submit_subtask_form")
     public String add_subtask_form(WebRequest webRequest, Model model) {
-        String suptaskName = webRequest.getParameter("sub_task_name");
-        String suptaskDesripion = webRequest.getParameter("sub_task_description");
-        String suptaskTime = webRequest.getParameter("sub_task_time");
+        String subtaskName = webRequest.getParameter("sub_task_name");
+        String subtaskDescription = webRequest.getParameter("sub_task_description");
+        String subtaskTime = webRequest.getParameter("sub_task_time");
         String subtaskPrice = webRequest.getParameter("sub_task_price");
-        String subtaskConsultantnName = webRequest.getParameter("sub_task_consultant_name");
+        String subtaskConsultantName = webRequest.getParameter("sub_task_consultant_name");
         String subtaskDeadLine = webRequest.getParameter("sub_task_dead_line");
+        String proId = webRequest.getParameter("");
 
-
-        dataFacade.createSubTask(suptaskName, suptaskDesripion, suptaskTime, subtaskPrice, subtaskConsultantnName, subtaskDeadLine);
+        dataFacade.createSubTask(subtaskName, subtaskDescription, subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId);
         model.addAttribute("subtaskpost", subTaskArrayList);
 
         return "redirect:subtask_creation_succes";
@@ -134,7 +134,7 @@ public class FrontController {
     public String send_project_request(WebRequest webRequest) throws SQLexceptionHandler {
         ProjectListMapper pmlRequest = new ProjectListMapper();
         String qId = webRequest.getParameter("qId");
-        pmlRequest.projectListArrayList();
+        pmlRequest.detailsrequest();
 
 
         return "redirect:project_details";

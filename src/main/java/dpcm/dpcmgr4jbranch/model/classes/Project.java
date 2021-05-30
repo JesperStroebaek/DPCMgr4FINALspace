@@ -7,7 +7,7 @@ public class Project
 {
     //Atributter (encapsulation, dataType, variable). og en arraylist.
 
-    private int projectId;
+    private String projectId;
     private String projectName;
     private String projectDescription;
     private int totalProjectTime;
@@ -15,6 +15,7 @@ public class Project
     private String startDate;
     private String deadLine;
     private String qId;
+
 
 
 
@@ -32,11 +33,11 @@ public class Project
     }
 
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 

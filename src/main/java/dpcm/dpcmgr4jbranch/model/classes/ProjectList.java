@@ -4,28 +4,30 @@ import java.util.List;
 
 public class ProjectList {
 
-    private int projectId;
+    private String projectId;
     private String projectName;
     private String consultantName;
 
-    public ProjectList(int projectId, String projectName, String consultantName) {
+
+
+
+    public ProjectList(String projectId, String projectName, String consultantName) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.consultantName = consultantName;
     }
 
-    public List<ProjectList> projects()
-    {
+    public List<ProjectList> projects() {
         return projects();
 
     }
 
 
-    public int getProjectId() {
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 
@@ -36,6 +38,7 @@ public class ProjectList {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
+
     public String getConsultantName() {
         return consultantName;
     }
@@ -46,6 +49,6 @@ public class ProjectList {
 
     @Override
     public String toString() {
-        return projectId + projectName + consultantName;
+        return "projectId: " + projectId + "\n" + "projectName: " + projectName;
     }
 }

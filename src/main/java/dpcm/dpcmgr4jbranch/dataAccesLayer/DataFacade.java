@@ -11,7 +11,7 @@ import java.util.List;
 /* Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem.
 for at skjule vores backend for udefrakommende */
 @Service
-public class DataFacade {
+public class  DataFacade {
 
 
     ProjectMapper projectMapper = new ProjectMapper();
@@ -28,16 +28,14 @@ public class DataFacade {
 
     }
 
-    public String createSubTask(String subtaskName, String subtaskDescription, String subtaskTime
+    public String createSubTask(String subtaskName, String subtaskDescription, int subtaskTime
             , String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine, String proId ){
-        // Her laver vi string om til int og double
 
 
-         //int subtaskTime = (Integer.parseInt(subtaskTime));
 
-        int isubtaskTime = 0;
-        return subTaskMapper.insertToSubTask( subtaskName,  subtaskDescription,  isubtaskTime, subtaskPrice
-                , subtaskConsultantName, subtaskDeadLine, proId );
+        return subTaskMapper.insertToSubTask(subtaskName,subtaskDescription,
+        subtaskTime, subtaskPrice,
+                 subtaskConsultantName, subtaskDeadLine,  proId);
     }
 
     public List<ProjectList> listMapMetode () throws SQLexceptionHandler {
@@ -45,7 +43,6 @@ public class DataFacade {
         return listMapper.pListArrayList();
 
     }
-
 
 }
 

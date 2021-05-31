@@ -5,7 +5,7 @@ public class SubTask {
     private String subtaskId;
     private String subtaskName;
     private String subtaskDescription;
-    private String subtaskTime;
+    private int subtaskTime;
     private String subtaskPrice;
     private String subtaskConsultantName;
     private String subtaskDeadLine;
@@ -17,7 +17,7 @@ public class SubTask {
     // Konstrukter med parameter.
 
 
-    public SubTask(String suptaskName, String subtaskDescription, String subtaskTime
+    public SubTask(String suptaskName, String subtaskDescription, int subtaskTime
             , String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine) {
         this.subtaskName = suptaskName;
         this.subtaskDescription = subtaskDescription;
@@ -52,11 +52,11 @@ public class SubTask {
         this.subtaskDescription = subtaskDescription;
     }
 
-    public String getSubtaskTime() {
+    public int getSubtaskTime() {
         return subtaskTime;
     }
 
-    public void setSubtaskTime(String subtaskTime) {
+    public void setSubtaskTime(int subtaskTime) {
         this.subtaskTime = subtaskTime;
     }
 

@@ -111,14 +111,19 @@ public class FrontController {
 
     @PostMapping("/submit_subtask_form")
     public String add_subtask_form(WebRequest webRequest, Model model) {
+       // webRequest.getParameter("sub_task_time") = (Integer.parseInt(subtaskTimeI));
         String subtaskName = webRequest.getParameter("sub_task_name");
         String subtaskDescription = webRequest.getParameter("sub_task_description");
-        String subtaskTime = webRequest.getParameter("sub_task_time");
+       //int subtaskTime = webRequest.getParameter("sub_task_time");
         String subtaskPrice = webRequest.getParameter("sub_task_price");
         String subtaskConsultantName = webRequest.getParameter("sub_task_consultant_name");
         String subtaskDeadLine = webRequest.getParameter("sub_task_dead_line");
         String proId = webRequest.getParameter("pro_id");
 
+        // Her eller i DataFacaden SKAL vi have lavet Strings om til int og doubles så koden kører efter planen.
+        //int subtaskTime = (Integer.parseInt(subtaskTime));
+
+        int subtaskTime = -1;
         dataFacade.createSubTask(subtaskName, subtaskDescription, subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId);
         model.addAttribute("subtaskpost", subTaskArrayList);
 
@@ -131,10 +136,13 @@ public class FrontController {
     }
 
     @PostMapping("/send_project_request")
-    public String send_project_request(WebRequest webRequest) throws SQLexceptionHandler {
-        ProjectListMapper pmlRequest = new ProjectListMapper();
-        String qId = webRequest.getParameter("qId");
-        pmlRequest.detailsrequest();
+    public String send_project_request(Model model) throws SQLexceptionHandler {
+
+        DataFacade qd = new DataFacade();
+        //qd.createSubTask("sub_task_name","sub_task_description",
+                //SubTaskTime,"sub_task_price" ,
+            //    "sub_task_consultant_name"
+             //   , "sub_task_dead_line","pro_id");
 
 
         return "redirect:project_details";

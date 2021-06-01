@@ -15,7 +15,7 @@
         </header>
         <div class="login_form">
             <h1>
-                LOGIN-siden.. templ folder
+                Enter Username and password
             </h1>
             <div class="login_form">
                 <form action="/submit_login" method="post">
@@ -29,9 +29,5 @@
             </div>
         </div>
 </body>
-<footer>
-    <div id="footer-text">
-        <p> Copyright © 2021 • All rights reserved • Mathias - Jesper - Robert - Tobias </p>
-    </div>
-</footer>
+<footer th:replace="fragments/footer">Default</footer>
 </html>

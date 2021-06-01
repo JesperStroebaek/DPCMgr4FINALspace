@@ -1,32 +1,30 @@
 html{
     font-family: Hack, monospace;
-
+    text-color: black;
     border: 2px solid black;
     background-color: darkgrey;
-    height: 100%;
-
 
 }
-.header{
-
-
-}
-body {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    background-image: url("alphaSolutionsLogoStandAlone.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-{
-    min-height: 100%;
-
+header{
     align-items: center;
-}
 
+}
+header h1{
+    text-align: center;
+}
+header h3{
+    text-align: center;
+}
+header p{
+    text-align: center;
+}
+a{
+    font-size: 1.1em;
+    line-height: 1.3em;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
 
 header nav
 {
@@ -38,34 +36,26 @@ header nav a
 {
     flex-grow: 1;
     color: black;
-}
-
-header nav{
-
     align-items: center;
-
-}
-
-header nav a {
-    padding: 20px;
+    padding: 0px;
     text-decoration: none;
-    color: black;
 }
-
 header nav a:hover {
     color: snow;
     background-color: grey;
 }
-body{
-    align-content: center;
+center{
+    text-align: center;
 }
 
+
 .flexparent {
-    min-height: 100%;
+    height: 100%;
+    margin-bottom: -5px;
     display: flex;
     flex-direction: row;
     flex: 1 0 auto;
-
+    width: auto;
 
 }
 .fc1{
@@ -92,11 +82,11 @@ body{
 }
 
 footer{
-    margin-bottom: -5px;
-    flex-shrink: 0%;
-    height: 5px;
 
-    align-items: center;
+margin-bottom: 0px;
+.height: 30px;
+.padding: 0px;
+.align-items: center;
 }
 
 footer a:hover {
@@ -104,10 +94,8 @@ footer a:hover {
     background-color: red;
 }
 footer nav{
-    padding: 0px;
     text-align: center;
 }
 footer p{
-    margin-bottom: -5px;
     text-align: center;
 }

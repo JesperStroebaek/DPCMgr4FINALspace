@@ -19,9 +19,10 @@
         <td th:text="${pDetail}">
         </td>
     </table>
+    <hr>
     <Form action="/send_project_request" method="Post">
-        <label for="qId">Enter project Id</label>
-    <input type="text" name="qId" id="qId"><button type="submit">view details for a project</button>
+        <label for="qId">To Update - Enter Project ID</label>
+    <input type="text" name="qId" id="qId"><button type="submit">Go to Project</button>
     </Form>
 </div>
 <footer th:replace="fragments/footer">Default</footer>

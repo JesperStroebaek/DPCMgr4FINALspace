@@ -95,6 +95,6 @@ public class Project
     @Override
     public String toString()
     {
-        return "projectId: " + projectId + "projectName: " + projectName + "projectDescription: " + projectDescription + "totalProjectTime: " + totalProjectTime + "consultantName: " + consultantName + "startDate: " + startDate + "deadLine: " + deadLine + "qId: " + qId;
+        return "Id: " + projectId + "Project Name: " + projectName + "projectDescription: " + projectDescription + "totalProjectTime: " + totalProjectTime + "consultantName: " + consultantName + "startDate: " + startDate + "deadLine: " + deadLine + "qId: " + qId;
     }
 }

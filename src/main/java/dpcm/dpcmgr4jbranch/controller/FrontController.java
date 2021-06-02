@@ -122,7 +122,8 @@ public class FrontController {
         //  + Her eller i DataFacaden SKAL vi have lavet Strings om til int og doubles så koden kører efter planen.
         //int subtaskTime = (Integer.parseInt(subtaskTime));
 
-        int subtaskTime = -1;
+        // subTaskTime har stadig problemer med int/String ændring!?
+        int subtaskTime = 0;
         dataFacade.createSubTask(subtaskName, subtaskDescription, subtaskTime, subtaskPrice, subtaskConsultantName, subtaskDeadLine, proId);
         model.addAttribute("subtaskpost", subTaskArrayList);
 

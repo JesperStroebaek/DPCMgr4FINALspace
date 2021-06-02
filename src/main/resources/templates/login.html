@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="fragments/head"> Deafalt Head </head>
-<body>
-        <header class="header">
-            <h1>
-                - D P C M -
-            </h1>
-            <p>Data Project Concept Management</p>
-            <hr>
-            <nav id="header_nav">
-                <a href="index">Home</a>
-            </nav>
-            <hr>
-        </header>
-        <div class="login_form">
-            <h1>
-                Enter Username and password
-            </h1>
+    <body>
+            <header class="header">
+                <h1>
+                    - D P C M -
+                </h1>
+                <p>Data Project Concept Management</p>
+                <hr>
+                <nav id="header_nav">
+                    <a href="index">Home</a>
+                </nav>
+                <hr>
+            </header>
             <div class="login_form">
-                <form action="/submit_login" method="post">
-                    <li><label for="consultant_name">ConsultantName</label></li>
-                    <input type="text" name="consultant_name" id="consultant_name">
-                    <li><label for="password">Password</label></li>
-                    <input type="password" name="password" id="password">
-                    <!-- Button -->
-                    <input type="submit" value="login" name="submit_login" id="submit_login">
-                </form>
+                <h1>
+                    Enter Username and password
+                </h1>
+                <div class="login_form">
+                    <form action="/submit_login" method="post">
+                        <li><label for="consultant_name">ConsultantName</label></li>
+                        <input type="text" name="consultant_name" id="consultant_name">
+                        <li><label for="password">Password</label></li>
+                        <input type="password" name="password" id="password">
+                        <!-- Button -->
+                        <input type="submit" value="login" name="submit_login" id="submit_login">
+                    </form>
+                </div>
             </div>
-        </div>
-</body>
+    </body>
 <footer th:replace="fragments/footer">Default</footer>
 </html>

@@ -3,24 +3,23 @@
 <head th:replace="fragments/head"> Deafalt Head </head>
 
     <body>
-    <header th:replace="fragments/header">Default Header</header>
-            <h2>
-              Project is created..
-            </h2>
+        <header th:replace="fragments/header">Default Header</header>
+                <h2>
+                  Project is created..
+                </h2>
 
+              <section id="project_creation_form_succes">
+                  <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
+                  <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
+                  <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
+                  <p th:text="${'StartDate: ' + project_details.getStartDate()}"></p>
+                  <p th:text="${'ConsultantName: ' + project_details.getConsultantName()}"></p>
 
-          <section id="project_creation_form_succes">
-              <p th:text="${'ProjectName: ' + project_details.getProjectName()}"></p>
-              <p th:text="${'DeadLine: ' + project_details.getDeadLine()}"></p>
-              <p th:text="${'ProjectDescription: ' + project_details.getProjectDescription()}"></p>
-              <p th:text="${'StartDate: ' + project_details.getStartDate()}"></p>
-              <p th:text="${'ConsultantName: ' + project_details.getConsultantName()}"></p>
+              </section>
+                <hr>
 
-          </section>
-    <hr>
-
-            <p>Result can be altered on the 'Update Project' Page</p>
-
+                <p>Result can be altered on the 'Update Project' Page</p>
+        <footer th:replace="fragments/footer">Default</footer>
     </body>
-<footer th:replace="fragments/footer">Default</footer>
+
 </html>

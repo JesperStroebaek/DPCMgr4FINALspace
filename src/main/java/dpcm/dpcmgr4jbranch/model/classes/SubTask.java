@@ -1,7 +1,7 @@
 package dpcm.dpcmgr4jbranch.model.classes;
 
 public class SubTask {
-    //Atributter (encapsulation, dataType, variable).
+    // + Atributter (encapsulation, dataType, variable).
     private String subtaskId;
     private String subtaskName;
     private String subtaskDescription;
@@ -10,13 +10,12 @@ public class SubTask {
     private String subtaskConsultantName;
     private String subtaskDeadLine;
 
-    // konstrukter (tom).
+    // + konstrukter (tom).
     public SubTask() {
     }
 
-    // Konstrukter med parameter.
 
-
+    // + Konstrukter med parameter.
     public SubTask(String suptaskName, String subtaskDescription, int subtaskTime
             , String subtaskPrice, String subtaskConsultantName, String subtaskDeadLine) {
         this.subtaskName = suptaskName;
@@ -27,7 +26,7 @@ public class SubTask {
         this.subtaskDeadLine = subtaskDeadLine;
     }
 
-    // Metoder Getter og Setter.
+    // + Metoder Getter og Setter.
     public String getSubtaskId() {
         return subtaskId;
     }
@@ -84,6 +83,13 @@ public class SubTask {
 
     public void setSubtaskDeadLine(String subtaskDeadLine) {
         this.subtaskDeadLine = subtaskDeadLine;
+    }
+
+
+    @Override
+    public String toString()
+    {
+        return "subtaskId: " + subtaskId + "subtaskName: " + subtaskName + "subtaskDescription:" + subtaskDescription + "subtaskTime: " + subtaskTime + "subtaskPrice: " + subtaskPrice + "subtaskConsultantName: " + subtaskConsultantName + "subtaskDeadLine: " +subtaskDeadLine;
     }
 }
 

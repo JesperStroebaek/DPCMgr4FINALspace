@@ -17,7 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 import java.util.ArrayList;
 
 
-// @Annotation. oplyser spring at klassen er en controller.
+// + @Annotation. oplyser spring at klassen er en controller.
 @Controller
 public class FrontController {
 
@@ -29,29 +29,28 @@ public class FrontController {
     //DataFacade dataFacade = new DataFacade();
 
 
-    // @GetMapping tager imod en getrequest fra browseren.
+    // + @GetMapping tager imod en getrequest fra browseren.
     @GetMapping("/index")
     public String index() {
         return "index";
     }
 
-    // index er en html fil der returneres. Og altid den html der ledes efter først!
-    // login er den html fil der returneres (get).
+    // + index er en html fil der returneres. Og altid den html der ledes efter først!
+    // + login er den html fil der returneres (get).
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
-    // Hvis login er godkendt bliver vi redirectet til project_list
+    // + Hvis login er godkendt bliver vi redirectet til project_list
     @PostMapping("/submit_login")
     public String submit_login() {
         return "redirect:project_list";
     }
 
-    // Skal indeholde en samlet liste over alle de projekter der er blevet arbejdet, og ikke er slettet fra DB. 'overblik'
+    // + Skal indeholde en samlet liste over alle de projekter der er blevet arbejdet, og ikke er slettet fra DB. 'overblik'
     @GetMapping("/project_creator")
     public String project_creator(WebRequest request, Model model) throws Exception {
-
 
         //int projectId = dataFacade.createProject(projectName, consultantName, projectDescription, startDate, deadLine);
         //Project project = dataFacade.getProjectFromId(projectId);
@@ -74,7 +73,7 @@ public class FrontController {
         return "redirect:project_list";
     }
 
-    // @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
+    // + @PostMapping tager imod en Post-request fra browseren. åbner project_creator.
     @PostMapping("/submit_project_form")
     public String submit_project_form(WebRequest request) throws Exception {
         String projectName = request.getParameter("project_name");
@@ -95,7 +94,7 @@ public class FrontController {
         return "project_creation_succes";
     }
 
-    // Project details skal indeholde alle fakta om aktuelt project man arbejder med.
+    // + Project details skal indeholde alle fakta om aktuelt project man arbejder med.
     @GetMapping("/project_details")
     public String project_details(Model model) {
         model.addAttribute("detailposts", projectArrayList);
@@ -120,7 +119,7 @@ public class FrontController {
         String subtaskDeadLine = webRequest.getParameter("sub_task_dead_line");
         String proId = webRequest.getParameter("pro_id");
 
-        // Her eller i DataFacaden SKAL vi have lavet Strings om til int og doubles så koden kører efter planen.
+        //  + Her eller i DataFacaden SKAL vi have lavet Strings om til int og doubles så koden kører efter planen.
         //int subtaskTime = (Integer.parseInt(subtaskTime));
 
         int subtaskTime = -1;
@@ -140,30 +139,25 @@ public class FrontController {
 
         DataFacade qd = new DataFacade();
         //qd.createSubTask("sub_task_name","sub_task_description",
-                //SubTaskTime,"sub_task_price" ,
-            //    "sub_task_consultant_name"
-             //   , "sub_task_dead_line","pro_id");
+        //SubTaskTime,"sub_task_price" ,
+        //"sub_task_consultant_name"
+        // "sub_task_dead_line","pro_id");
 
 
         return "redirect:project_details";
     }
-  //  @GetMapping("/")
-   // public String arrayController(Model model) throws SQLexceptionHandler {
-       // ProjectListMapper Alist = new ProjectListMapper();
-        //String[] ProArray = Alist.projectListArrayList().
-       // return projectArrayList;
-       /* String[] continents = {
-                "Africa", "Antarctica", "Asia", "Australia",
-                "Europe", "North America", "Sourth America"
-        };
-
-        model.addAttribute("continents", continents);
-
-        return "continents";
-
-        */
-
-
+    //@GetMapping("/")
+    //public String arrayController(Model model) throws SQLexceptionHandler {
+    //ProjectListMapper Alist = new ProjectListMapper();
+    //String[] ProArray = Alist.projectListArrayList().
+    // return projectArrayList;
+    /* String[] continents = {
+     "Africa", "Antarctica", "Asia", "Australia",
+     "Europe", "North America", "Sourth America"
+      };
+    model.addAttribute("continents", continents);
+    return "continents";
+    */
 
 }
 

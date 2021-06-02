@@ -2,15 +2,15 @@ package dpcm.dpcmgr4jbranch.model.classes;
 
 public class Consultant
 {
-    //Atributter (encapsulation, dataType, variable).
+    // + Atributter (encapsulation, dataType, variable).
     private int id;
     private String consulentName;
     private String password;
 
-    // konstrukter (tom).
+    // + konstrukter (tom).
     public Consultant() {}
 
-    // Konstrukter med parameter.
+    // + Konstrukter med parameter.
     public Consultant(int id, String consulentName, String password)
     {
         this.id = id;
@@ -27,7 +27,7 @@ public class Consultant
     public String getPassword() { return password; }
     public void setPassword() { this.password = password; }
 
-    // Metode String toString.
+    // + Metode String toString.
     @Override
     public String toString()
     {

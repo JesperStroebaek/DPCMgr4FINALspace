@@ -8,8 +8,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/* Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem.
-for at skjule vores backend for udefrakommende */
+// + Datafacaden er vores knude punkt. Her kører kommunikationen fra omverdenen igennem. for at skjule vores backend for udefrakommende
 @Service
 public class  DataFacade {
 
@@ -17,10 +16,10 @@ public class  DataFacade {
     ProjectMapper projectMapper = new ProjectMapper();
     SubTaskMapper subTaskMapper = new SubTaskMapper();
     ProjectListMapper listMapper = new ProjectListMapper();
-    //
-    // ConsultantLogin - Security in general impl.
+
+    // + ConsultantLogin - Security in general impl.
     // private ConsultantMapper consultantMapper = new ConsultantMapper();
-    //
+
 
     public int createProject(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) throws Exception {
 

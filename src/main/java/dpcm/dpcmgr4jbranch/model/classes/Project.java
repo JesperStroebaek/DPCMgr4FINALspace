@@ -5,8 +5,7 @@ import java.util.Date;
 
 public class Project
 {
-    //Atributter (encapsulation, dataType, variable). og en arraylist.
-
+    // + Atributter (encapsulation, dataType, variable). og en arraylist.
     private String projectId;
     private String projectName;
     private String projectDescription;
@@ -16,14 +15,10 @@ public class Project
     private String deadLine;
     private String qId;
 
-
-
-
-    // konstrukter (tom).
+    // + konstrukter (tom).
     public Project() {}
 
-
-
+    // + Konstrukter med parameter.
     public Project(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) {
         this.projectName = projectName;
         this.projectDescription = projectDescription;
@@ -31,8 +26,7 @@ public class Project
         this.startDate = startDate;
         this.deadLine = deadLine;
     }
-
-
+    // + metoder med getters og setters
     public String getProjectId() {
         return projectId;
     }
@@ -95,5 +89,12 @@ public class Project
 
     public void setqId(String qId) {
         this.qId = qId;
+    }
+
+    // + Metode String toString.
+    @Override
+    public String toString()
+    {
+        return "projectId: " + projectId + "projectName: " + projectName + "projectDescription: " + projectDescription + "totalProjectTime: " + totalProjectTime + "consultantName: " + consultantName + "startDate: " + startDate + "deadLine: " + deadLine + "qId: " + qId;
     }
 }

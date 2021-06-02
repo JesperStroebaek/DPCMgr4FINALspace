@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
+
 public class DBManager {
     private static String user;
     private static String password;

@@ -10,8 +10,6 @@ import java.sql.*;
 public class ProjectMapper
 {
 
-
-
     public int insertToProject(String projectName, String projectDescription, String consultantName, String startDate, String deadLine) throws Exception {
         try {
             Connection con = DBManager.getConnection();

@@ -16,6 +16,7 @@ public class ProjectListMapper {
     public ArrayList<ProjectList> pListArrayList() throws SQLexceptionHandler {
         try {
             //Project project = new Project();
+            // + den skaber forbindelsen til vores MySQL Database.
             Connection con = DBManager.getConnection();
             String SQLArray = "SELECT project_id, project_name, consultant_name FROM project ;";
             PreparedStatement pr = con.prepareStatement(SQLArray, Statement.RETURN_GENERATED_KEYS);
@@ -27,10 +28,7 @@ public class ProjectListMapper {
                 String consultantName = rs.getString(3);
                 ProjectList projectlist = new ProjectList(projectId, projectName, consultantName);
                 pListArray.add(projectlist);
-                //TODO Hej Robert vi sakl have vores projectId + projectName til at stå på vores project_list i vores HTML men vi har prøvet alt
                 //System.out.println(pListArray);
-
-
             }
             return pListArray;
         } catch (SQLException ex) {
@@ -62,5 +60,4 @@ public class ProjectListMapper {
             throw new SQLexceptionHandler(ex.getMessage());
         }
     }
-
 }
